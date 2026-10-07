@@ -1,0 +1,12 @@
+[
+  {
+    "name": "gsap.min.js",
+    "url": "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js",
+    "sha256": "96c01b81f44a3290e2b4532f55e2c9534b2adc43273a19f3756b2cb41f0fd0b6"
+  },
+  {
+    "name": "ScrollTrigger.min.js",
+    "url": "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js",
+    "sha256": "308219390e5e3b84cda0c481e70caa9820883ae10bda44e6e9a149a81aac4b3f"
+  }
+]

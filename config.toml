@@ -1,0 +1,82 @@
+[publication]
+name = "Skills Morning Brief"
+timezone = "Asia/Shanghai"
+hour = 8
+minute = 30
+max_recommendations = 3
+max_updates = 3
+max_news = 2
+
+[collection]
+min_stars = 1000
+observation_stars = 500
+max_repositories = 6
+max_new_files_per_repository = 4
+max_candidates_for_editor = 18
+request_timeout_seconds = 20
+request_budget = 48
+discovery_queries = [
+  "agent-skills stars:>=1000 archived:false fork:false",
+  "codex skills in:name,description,readme stars:>=1000 archived:false fork:false",
+]
+
+[[repositories]]
+name = "openai/plugins"
+official = true
+priority = 100
+
+[[repositories]]
+name = "anthropics/skills"
+official = true
+priority = 95
+
+[[repositories]]
+name = "trailofbits/skills"
+priority = 90
+
+[[repositories]]
+name = "obra/superpowers"
+priority = 85
+
+[[repositories]]
+name = "vercel-labs/agent-skills"
+priority = 80
+
+[[repositories]]
+name = "github/awesome-copilot"
+official = true
+priority = 75
+
+[[feeds]]
+name = "OpenAI 产品更新"
+url = "https://learn.chatgpt.com/docs/whats-new"
+kind = "official_docs"
+
+[[feeds]]
+name = "Codex 发布"
+url = "https://github.com/openai/codex/releases.atom"
+kind = "atom"
+
+[editor]
+provider = "codex"
+timeout_seconds = 240
+batch_size = 6
+
+[ranking]
+recommendation_threshold = 80
+inventory_max_age_days = 7
+weights = { gap = 35, relevance = 25, compatibility = 15, evidence = 15, popularity = 10 }
+
+[leaderboard]
+personal_min_score = 60
+classic_value_weight = 0.8
+classic_popularity_weight = 0.2
+classic_per_repository = 4
+priority_names = [
+  "test-driven-development", "systematic-debugging", "verification-before-completion",
+  "writing-plans", "executing-plans", "brainstorming", "using-git-worktrees",
+  "subagent-driven-development", "dispatching-parallel-agents", "receiving-code-review",
+  "requesting-code-review", "mcp-builder", "skill-creator", "frontend-design",
+  "webapp-testing", "vercel-react-best-practices", "vercel-composition-patterns",
+  "agentic-actions-auditor", "audit-context-building", "variant-analysis",
+]

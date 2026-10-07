@@ -1,0 +1,7 @@
+interface:
+  display_name: "Skills Morning Brief"
+  short_description: "监测 GitHub 热门 Skills、真实增长与 AI 动态，提供可选的个人推荐"
+  brand_color: "#B13F2B"
+  default_prompt: "使用 $agent-morning-paper 打开 Skills Morning Brief，查看 GitHub Skills 和 AI 动态。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,5 @@
+{
+  "user_roots": ["C:/Users/your-name/.codex/skills", "C:/Users/your-name/.agents/skills"],
+  "bundled_skill_paths": [],
+  "config_path": "C:/Users/your-name/.codex/config.toml"
+}

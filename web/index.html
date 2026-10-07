@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light">
+  <title>Skills Morning Brief · 热门技能与 AI 动态</title>
+  <meta name="description" content="Skills Morning Brief monitors popular AI skills on GitHub, growth trends, and AI agent news, with optional personal recommendations.">
+  <link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/readability.css"><link rel="stylesheet" href="/onboarding.css"><link rel="stylesheet" href="/home.css">
+  <script src="/vendor/gsap.min.js" defer></script><script src="/vendor/ScrollTrigger.min.js" defer></script><script src="/app.js" defer></script><script src="/onboarding.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#paper">跳到资讯正文</a><div id="progress" aria-hidden="true"></div>
+  <aside class="rail">
+    <a class="brand" href="/" aria-label="Skills Morning Brief 首页"><span class="brand-mark">S<span>·</span></span><span>SKILLS<br>MORNING<br>BRIEF</span></a>
+    <nav aria-label="资讯导航">
+      <button class="nav active" data-filter="home" aria-pressed="true">首页 <span>01</span></button>
+      <button class="nav" data-filter="hot" aria-pressed="false">热门 Skills <span>02</span></button>
+      <button class="nav" data-filter="growth" aria-pressed="false">近期增长 <span>03</span></button>
+      <button class="nav" data-filter="news" aria-pressed="false">AI / Agent 动态 <span>04</span></button>
+      <button class="nav personal-nav" data-filter="personal" aria-pressed="false">按我推荐 <span>可选</span></button>
+    </nav>
+    <div class="reading-tools"><span>字号</span><div class="font-control" role="group" aria-label="阅读字号"><button data-reading="standard" aria-pressed="false">18</button><button data-reading="large" aria-pressed="true" class="selected">20</button><button data-reading="extra" aria-pressed="false">22</button></div></div>
+    <details id="personal-sidebar" hidden><summary>我的个人方案</summary><div class="workspace-choice"><label for="workspace-selector">当前方案</label><select id="workspace-selector"><option value="">尚未建立个人方案</option></select><button id="workspace-new">＋ 新建个人方案</button></div><button id="inventory-open" class="inventory-button">查看已有能力 <span>↗</span></button><div class="archive-box"><label for="archive">个人晨报记录</label><select id="archive"><option>尚无记录</option></select></div><button class="nav" data-filter="saved">我的收藏</button></details>
+    <div class="rail-bottom"><span class="tiny-dot"></span> 持续监测 GitHub<p>发现好技能，<br>跟上 AI 新动向。</p></div>
+  </aside>
+  <main id="paper">
+    <header class="masthead"><div class="edition"><span id="issue-date">正在读取资讯…</span><span id="edition-label">GitHub Skills 观察站</span></div><div class="title-line"><h1>Skills Morning Brief<span class="title-dot">.</span></h1></div><p class="deck">热门技能、真实增长、AI 新动向。</p></header>
+    <section id="session-needed" class="welcome-panel" hidden><h2>个人推荐是可选功能</h2><p>若想保存自己的能力检查，请从本机启动器打开。热门技能和资讯可以继续直接浏览。</p><button class="return-home" type="button">返回资讯首页</button></section>
+    <section id="welcome-panel" class="welcome-panel" hidden><h2>看看哪些技能能补充我已有的能力</h2><p>自动发现常用工具和技能目录，确认后才开始检查。</p><button id="welcome-start" type="button">了解我的能力</button><button class="return-home secondary" type="button">先看热门技能</button></section>
+    <section id="workspace-panel" class="workspace-panel" hidden><div><h2 id="workspace-title">我的个人推荐</h2><p id="workspace-description"></p></div><div class="workspace-actions"><button id="workspace-settings">调整目标</button><button id="scan-again">重新检查</button><button id="generate-recommendations" class="primary">生成个人推荐</button><button class="return-home">返回资讯首页</button></div><p id="job-status" role="status" aria-live="polite"></p></section>
+    <section id="editor-note" class="editor-note" hidden><span class="eyebrow">本期判断</span><p id="lead"></p></section>
+    <div id="health" class="health" hidden></div><section class="stats" id="stats" hidden></section>
+    <div class="reading-bar"><span id="view-title">首页精选</span><label class="search"><span>查找</span><input id="search" type="search" placeholder="搜索技能或用途" aria-label="搜索技能和资讯"></label></div>
+    <div id="rank-controls" class="rank-controls" hidden><div class="rank-modes" role="group" aria-label="个人榜单类型"><button data-ranking="personal" class="selected" aria-pressed="true">我的能力增量</button><button data-ranking="classic" aria-pressed="false">经典技能</button></div><label for="repo-filter">技能库</label><select id="repo-filter"><option value="">全部技能库</option></select></div><p id="rank-explanation" class="rank-explanation" hidden></p>
+    <div id="content" aria-live="polite"><div class="empty">正在读取公开资讯…</div></div>
+    <details class="coverage"><summary>来源与采集范围 <span id="coverage-count"></span></summary><p class="coverage-note">Stars 是仓库级热度。内容保留来源与实际采样时间。</p><div id="sources"></div></details>
+    <footer class="paper-footer"><span>Skills Morning Brief / GitHub AI Skills 资讯</span><p id="notes"></p><span id="generated"></span></footer>
+  </main>
+  <dialog id="inventory-dialog" aria-labelledby="inventory-title"><div class="dialog-top"><h2 id="inventory-title">我的已有能力</h2><button id="inventory-close" type="button">关闭 ×</button></div><p class="muted">已读取定义，运行依赖和账号状态分别确认。</p><input id="inventory-search" type="search" placeholder="查找已有能力"><div id="inventory-list"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <template id="empty-inventory-option"><label class="empty-confirm"><input id="setup-confirm-empty" type="checkbox">我确认目前没有配置 Skills，从基础能力开始</label></template>
+  <dialog id="setup-dialog" aria-labelledby="setup-title">
+    <form id="setup-form">
+      <div class="dialog-top"><div><span id="setup-step-label" class="eyebrow">可选个人推荐 · 第 1 步</span><h2 id="setup-title">检查我已有的能力</h2></div><button type="button" id="setup-close" aria-label="关闭个人推荐并返回首页">关闭 ×</button></div>
+      <section id="setup-step-one"><label>常用工具<select id="setup-host"><option value="codex">Codex</option><option value="claude_code">Claude Code</option><option value="cursor">Cursor</option><option value="deepcode">DeepSeek / Deep Code</option><option value="generic">其他工具 / 导入清单</option></select></label><p id="detected-summary" class="setup-note">正在发现标准技能目录…</p><details id="directory-details"><summary>查看检查范围或手动调整</summary><label>项目目录（可选）<input id="setup-project" placeholder="仅在有项目专用技能时填写"></label><button type="button" id="detect-roots">重新发现目录</button><div id="root-options"></div><label>其他技能目录（可选）<textarea id="setup-custom-roots" rows="2" placeholder="每行一个实际目录"></textarea></label><label class="import-button">或导入自己的清单<input id="inventory-file" type="file" accept=".json,application/json"></label></details><p class="setup-note">点击检查才读取定义，不执行 Skill 脚本。</p></section>
+      <section id="setup-step-two" hidden><p id="scan-result-summary" class="scan-summary"></p><label>这次主要想做什么？<textarea id="setup-goals" rows="2" maxlength="2000" placeholder="例如：改进 AI 工作流、开发网页。可留空先看通用增量。"></textarea></label></section>
+      <details id="advanced-settings"><summary>高级选项：目标、模型与多方案</summary><label>方案名称<input id="setup-name" maxlength="80" placeholder="可自动命名"></label><label>常用技术或工具（可选）<input id="setup-stack" maxlength="1000" placeholder="例如：Python、React、Excel"></label><label>分析模型<select id="setup-provider"><option value="codex">本机 Codex 登录</option><option value="deepseek">DeepSeek API</option><option value="compatible">其他兼容接口 / 本地模型</option></select></label><div id="model-settings" hidden><label>模型名称<input id="setup-model" placeholder="deepseek-flash"></label><label id="base-url-label">接口地址<input id="setup-base-url" placeholder="https://… 或本机地址"></label><label>API Key（仅当前运行会话）<input id="setup-api-key" type="password" autocomplete="off" placeholder="已有本机环境变量时留空"></label><p id="provider-status" class="setup-note"></p></div><p class="setup-note">生成时只把名称、说明和目标交给所选模型，原始私有指令留在本机。</p><label id="personal-daily-option"><input id="setup-personal-daily" type="checkbox">每天更新我的个人推荐（可选）</label></details>
+
+      <p id="setup-message" role="status"></p>
+      <div class="setup-footer"><button type="button" id="setup-later" class="secondary">稍后再说，返回首页</button><button type="button" id="setup-back" class="secondary" hidden>返回上一步</button><button type="submit" class="primary" id="setup-save">检查已有技能</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

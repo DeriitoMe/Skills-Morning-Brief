@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["lead", "analyses", "news"],
+  "properties": {
+    "lead": {"type": "string"},
+    "analyses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "score", "general_score", "general_reason", "difficulty", "relation", "summary", "reason", "use_case", "compatibility_status", "compatibility_notes", "matched_existing", "evidence_paths", "change_summary"],
+        "properties": {
+          "id": {"type": "string"},
+          "score": {"type": "integer", "minimum": 0, "maximum": 100},
+          "general_score": {"type": "integer", "minimum": 0, "maximum": 100},
+          "general_reason": {"type": "string"},
+          "difficulty": {"type": "string", "enum": ["beginner", "intermediate", "advanced"]},
+          "relation": {"type": "string", "enum": ["new", "improvement", "covered", "uncertain"]},
+          "summary": {"type": "string"},
+          "reason": {"type": "string"},
+          "use_case": {"type": "string"},
+          "compatibility_status": {"type": "string", "enum": ["documented", "adaptation", "blocked", "unknown"]},
+          "compatibility_notes": {"type": "string"},
+          "matched_existing": {"type": "array", "items": {"type": "string"}},
+          "evidence_paths": {"type": "array", "items": {"type": "string"}},
+          "change_summary": {"type": "string"}
+        }
+      }
+    },
+    "news": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "summary", "impact", "date_label"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "impact": {"type": "string"},
+          "date_label": {"type": "string"}
+        }
+      }
+    }
+  }
+}

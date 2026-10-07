@@ -1,0 +1,1 @@
+{"type":"object","additionalProperties":false,"required":["items"],"properties":{"items":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["id","title","summary","impact"],"properties":{"id":{"type":"string"},"title":{"type":"string"},"summary":{"type":"string"},"impact":{"type":"string"}}}}}}

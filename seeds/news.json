@@ -1,0 +1,117 @@
+{
+  "updated_at": "2026-10-07T18:08:44.455185+00:00",
+  "items": [
+    {
+      "id": "b08e03422c92382850503a4e8ac85067ff73844d0acd66204ee2d399db4443ff",
+      "title": "Codex 0.161.0：GPT-6.1 Sol 成为默许模型，新增 /mcp login 与 Daybreak 显式开关",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0",
+      "published_at": "2026-10-07T16:01:20Z",
+      "fingerprint": "e17882791e2bbac16e5eec6234217febc31e69488eb3af2ef27a900bda39be11",
+      "source": "Codex 发布",
+      "collected_at": "2026-10-07T17:57:22.388046+00:00",
+      "summary": "Codex 0.161.0 将 GPT-6.1 Sol 设为捆绑与 Amazon Bedrock 目录中的默认模型，并支持从活动终端会话以 /mcp login <name> 登录 MCP 服务器。该版本还将 Daybreak 改为需通过 --enable cli_daybreak 或 features.cli_daybreak=true 显式启用，单独设置 daybreak=true 不再生效，相关控件与 /daybreak 命令默认隐藏。",
+      "impact": "使用 Codex 的 Agent 需要按新方式登录 MCP 服务器，并注意 Daybreak 路由必须显式开启，此前仅靠 daybreak=true 的配置将不再生效。",
+      "edit_status": "ai_reviewed"
+    },
+    {
+      "id": "9a498f821d27e63f330e43aff13571cce945a55d7cbadc746827ccf67ebbde14",
+      "title": "Codex 发布 0.162.0-alpha.18 预发布版本",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.18",
+      "published_at": "2026-10-07T02:16:44Z",
+      "fingerprint": "3044a6899129cd261e98c58cb104531fbade3298b1f116a4dbbf9d5a77186acd",
+      "source": "Codex 发布",
+      "collected_at": "2026-10-07T17:57:22.387952+00:00",
+      "summary": "Codex 发布了预发布版本 0.162.0-alpha.18，发布说明中未包含更多变更细节。",
+      "impact": "面向测试环境的 Codex 用户可关注该预发布版本，但正式版功能仍以稳定版本说明为准。",
+      "edit_status": "ai_reviewed"
+    },
+    {
+      "id": "0c734930a759f57abefcec696723246934c09ac4151d703b2a2f7b757bcec242",
+      "title": "Claude Code v2.1.292：Agent 工具新增 effort 参数，插件安装支持 --marketplace",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292",
+      "published_at": "2026-10-06T18:59:30Z",
+      "fingerprint": "2c4076824e9e8475c540c28d196786abddc5b3c33fc0cf1c6841fef9dd5036e0",
+      "source": "Claude Code 发布",
+      "collected_at": "2026-10-07T17:57:23.287460+00:00",
+      "summary": "Claude Code v2.1.292 为 Agent 工具加入 effort 参数，可让 Claude 以指定强度运行子代理；同时为 claude plugin install 增加 --marketplace <source>，按与 claude plugin marketplace add 相同的策略检查后从该来源安装插件。此版本还修复了技能或斜杠命令的 allowed-tools 规则在中途退出 auto 或 plan 模式后于后续轮次重新生效等问题。",
+      "impact": "配置子代理与插件来源时可用新的 effort 参数和 --marketplace 选项，同时依赖 allowed-tools 限制的 Skill 行为在退出自动或计划模式后更符合预期。",
+      "edit_status": "ai_reviewed"
+    },
+    {
+      "id": "4cc1e5ca693bd68aefddf61c7fb0e41a918c2ae04c4bbe2a13160de42adb9148",
+      "title": "OpenAI DevDay 2026 公布多项 Agent 与开发功能更新",
+      "url": "https://learn.chatgpt.com/docs/whats-new",
+      "published_at": null,
+      "fingerprint": "ec27190487b37575192a4281d580ae66a2bce614a324865d976ecab692bcbe63",
+      "source": "OpenAI 官方动态",
+      "collected_at": "2026-10-06T08:38:05.400157+00:00",
+      "summary": "OpenAI 官方动态汇总 DevDay 2026 发布内容，包括可跨对话持续推进任务的 dots、Codex 与 Work 的 Astra Ultrafast 加速模式、可复用的 Codex Cloud 环境、处于 research preview 的 Codex Security Cloud，以及 GPT-6.1 Sol、Plugin Extensions、MCP Events 等接口能力。同期页面还记录了 9 月 21–25 日 GPT-6 Sol 与 GPT-6 Luna 在 Codex 的推出，以及 GPT-5.5 将于 2026 年 10 月 14 日在 ChatGPT、ChatGPT Work 和 Codex 退役的说明。",
+      "impact": "Agent 与插件生态的接口（扩展、MCP 事件、安全扫描、云环境复用）明显增多，使用 Agent 或 Skills 的团队需要关注 dots 的逐步开放范围与 GPT-5.5 退役带来的设置迁移。",
+      "edit_status": "ai_reviewed"
+    },
+    {
+      "id": "bb63a15b856259f7a6bec5b10db6fa60dd2a0645c9d76e1491e9f4487ff28598",
+      "title": "Claude Code v2.1.291 修复两处回归问题",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.291",
+      "published_at": "2026-10-06T03:55:19Z",
+      "fingerprint": "13f399e2bf7b35dc3c854f370c65b93c14a23b3b9c1e1779639a2b4e3d74848e",
+      "source": "Claude Code 发布",
+      "collected_at": "2026-10-06T08:38:06.917883+00:00",
+      "summary": "该版本修复了 2.1.290 中云会话可能丢失权限提示回复的回归，以及 2.1.288 中退出会话时最后几条消息可能丢失的回归。",
+      "impact": "对依赖云会话和权限审批流程使用 Agent 的用户，升级可避免提示回复与会话尾部消息丢失。",
+      "edit_status": "ai_reviewed"
+    },
+    {
+      "id": "d31391e74fb441387a46bcaf63898e2b4a73d644e7fe95e7ca2b8a06b65385f6",
+      "title": "DeepSeek 发布 DeepSeek-V4.1-Flash 并调整 API 与价格",
+      "url": "https://api-docs.deepseek.com/updates/",
+      "source": "DeepSeek 官方更新",
+      "published_at": "2026-09-10T00:00:00+00:00",
+      "date_precision": "day",
+      "fingerprint": "7e2c4d11dc42669d1d48f0567e3109ad5cebdcac0a29eee950c91e4561da8d2c",
+      "collected_at": "2026-10-06T08:38:07.557911+00:00",
+      "summary": "DeepSeek 官方更新宣布发布 DeepSeek-V4.1-Flash，称其为新架构家族中最小模型，具备原生多模态视觉理解；API 中该模型名为 deepseek-flash，上一代 V4 Flash 与 V4 Flash Vision Exp 已退役但同名接口暂时路由至 V4.1 Flash。同时 API 价格下调，并决定在 2026 年 9 月 14 日后继续提供 DeepSeek V4 Pro 的 API 服务，计费方式不变。",
+      "impact": "使用 deepseek-v4-flash 等旧模型名的 Agent 或 Skills 调用会被路由到新模型，需要核查输出与成本变化，依赖多模态视觉能力的 Agent 可直接获得原生支持。",
+      "edit_status": "ai_reviewed"
+    },
+    {
+      "id": "db9d92389212945765c86c3849deddb799d1f4fb35044b6f2a79841ea844908f",
+      "title": "DeepSeek 发布实验性多模态模型 DeepSeek-V4-Flash-Vision-Exp",
+      "url": "https://api-docs.deepseek.com/updates/",
+      "source": "DeepSeek 官方更新",
+      "published_at": "2026-08-21T00:00:00+00:00",
+      "date_precision": "day",
+      "fingerprint": "99bb8a30c376fa7fc9bc15aa49c57289067cfe83695af3976d83400b2c42976c",
+      "collected_at": "2026-10-06T08:38:07.557933+00:00",
+      "summary": "DeepSeek 官方更新宣布在 API 平台上线实验性视觉理解模型 DeepSeek-V4-Flash-Vision-Exp，通过 model='deepseek-v4-flash-vision-exp' 调用。官方称其纯文本能力与 DeepSeek-V4-Flash 相当，在需要视觉理解的 agent 基准上有明显提升。",
+      "impact": "需要视觉理解的 Agent 可在 API 中试用该实验模型，但属实验版本，需留意后续模型名可能变化。",
+      "edit_status": "ai_reviewed"
+    }
+  ],
+  "sources": [
+    {
+      "source": "OpenAI 官方动态",
+      "status": "ok",
+      "detail": "已检查官方来源",
+      "checked_at": "2026-10-07T18:08:43.044108+00:00"
+    },
+    {
+      "source": "Codex 发布",
+      "status": "ok",
+      "detail": "已检查官方来源",
+      "checked_at": "2026-10-07T18:08:43.342306+00:00"
+    },
+    {
+      "source": "Claude Code 发布",
+      "status": "ok",
+      "detail": "已检查官方来源",
+      "checked_at": "2026-10-07T18:08:44.035630+00:00"
+    },
+    {
+      "source": "DeepSeek 官方更新",
+      "status": "ok",
+      "detail": "已读取带日期的官方更新",
+      "checked_at": "2026-10-07T18:08:44.455151+00:00"
+    }
+  ]
+}
