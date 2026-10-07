@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 from .catalog import catalog_public, prepare_catalog
-from .core import ROOT, capability_tags, fingerprint, local_zone, now_iso, read_json, write_json
+from .core import ROOT, capability_tags, display_date, fingerprint, local_zone, now_iso, read_json, write_json
 from .hosts import discover_roots
 from .leaderboard import balanced_classics, repository_heat
 from .providers import ProviderError, generate_json, provider_identity
@@ -191,7 +191,7 @@ def publish_private_edition(store, workspace_id, root=ROOT):
     rows = [row for row in board["personal"] if row["score"] >= 80 and history.get(row["id"]) != row["fingerprint"]][:3]
     report_id = now_iso().replace(":", "-")
     report = {"schema_version": 2, "id": report_id, "name": "Skills Morning Brief", "workspace_id": workspace_id, "workspace_name": profile["name"],
-              "date": datetime.now(local_zone(profile["timezone"])).strftime("%Y年%m月%d日"), "generated_at": now_iso(), "edition_label": "工作区每日变化",
+              "date": display_date(datetime.now(local_zone(profile["timezone"]))), "generated_at": now_iso(), "edition_label": "工作区每日变化",
               "lead": "本次发现 " + str(len(rows)) + " 项值得优先试用的能力。" if rows else "本次没有需要重复刊登的新推荐，已核对条目仍保留在长期陈列库。",
               "degraded": bool(inventory.get("errors")), "inventory_stale": False, "inventory_count": len(inventory.get("skills", [])),
               "candidate_count": len(board["items"]), "pending_review": board["pending_review"], "recommendations": rows, "updates": [],

@@ -25,6 +25,11 @@ def now_iso():
     return datetime.now(timezone.utc).isoformat()
 
 
+def display_date(value):
+    # Windows Python 3.11 strftime passes literal text through the active C locale.
+    return f"{value.year:04d}年{value.month:02d}月{value.day:02d}日"
+
+
 def fingerprint(value):
     if not isinstance(value, str):
         value = json.dumps(value, ensure_ascii=False, sort_keys=True)

@@ -9,6 +9,7 @@ Python 3.11+ local service with a browser reader, bundled public summaries and 2
 ## Release verification
 
 - 65 Python tests passed locally on Windows / Python 3.14.7. Coverage includes private session enforcement, CSRF and origin checks, workspace isolation, public field allowlists, refusal to forward credentials by redirects, source fingerprints, real growth windows, occupied ports, process locks and failed-run persistence.
+- The initial CI run exposed a Chinese date formatting error on English Windows / Python 3.11. Date formatting now constructs Unicode text directly, independently of the C locale. Both existing failing scenarios remain in the test suite; the release is gated on rerunning the Linux/Windows and Python 3.11/3.14 matrix.
 - JavaScript syntax checks passed. Nine DOM/HTTP flows passed: public home and navigation, optional entry, empty-field cancellation, Escape, automatic directory discovery, explicit scanning, back navigation and returning home. These checks use an isolated fixture with synthetic capabilities, not another real user's installation.
 - Current user's existing profile was preserved. Direct HTTP checks confirm that the public page is available and anonymous private API requests are rejected.
 - The old Windows task failed with exit code 1 because its PowerShell script was blocked by execution policy. The replacement uses a process-scoped execution parameter and the new product name. An initial anonymous GitHub refresh was degraded by rate limits; authenticated collection reuses the existing GitHub CLI login in memory.
@@ -18,7 +19,7 @@ Python 3.11+ local service with a browser reader, bundled public summaries and 2
 
 ## Verification limits
 
-The managed browser connection could not start in this environment, so visual screenshot verification remains unverified. DOM interaction checks do not establish actual pixel layout. Cross-platform and Python 3.11 CI is configured and must be checked in the repository after push. Real personal model calls for every supported Agent and third-party Skill execution are not part of this release validation.
+The managed browser connection could not start in this environment, so visual screenshot verification remains unverified. DOM interaction checks do not establish actual pixel layout. CI validates Python 3.11 and 3.14 on Linux and Windows; its resulting run is linked from the Release. macOS and real personal model calls for every supported Agent, as well as third-party Skill execution, are not part of this release validation.
 
 The daily task runs when this Windows user is logged in and the computer is on. A manual task trigger verifies the full execution path; the next natural clock-triggered run must be checked afterward. This release provides a local application and public source repository, not an always-online hosted deployment or outbound notification service.
 

@@ -11,7 +11,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from .collect import collect
-from .core import ROOT, inventory_stale, local_zone, now_iso, read_json, select_sections, write_json
+from .core import ROOT, display_date, inventory_stale, local_zone, now_iso, read_json, select_sections, write_json
 from .editor import review
 from .inventory import scan_inventory
 from .leaderboard import publish_leaderboard
@@ -189,7 +189,7 @@ def daily(root=ROOT, use_ai=True, discovery=True, review_only=False, editor_limi
         lead = edition_lead(recommendations, updates, pending_review)
         report = {
             "schema_version": 1, "id": report_id, "name": config["publication"]["name"],
-            "date": timestamp.strftime("%Y年%m月%d日"), "generated_at": now_iso(),
+            "date": display_date(timestamp), "generated_at": now_iso(),
             "edition_label": "试刊 · 首次建立基线" if not history else "每日版",
             "lead": lead, "degraded": degraded, "inventory_stale": stale,
             "inventory_count": len(inventory["skills"]), "candidate_count": len(ranked),
