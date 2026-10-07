@@ -8,8 +8,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from unittest.mock import patch
 
-from morningpaper.catalog import catalog_public, prepare_catalog
-from morningpaper.collect import HttpClient, is_skill_path
+from morningpaper.catalog import catalog_public, prepare_catalog, public_checkpoint
+from morningpaper.collect import HttpClient, discover, is_skill_path
 from morningpaper.launcher import reader_record
 from morningpaper.core import ROOT, read_json, write_json
 from morningpaper.network import SafeRedirectHandler, urlopen
@@ -21,6 +21,25 @@ from morningpaper.shelf_server import LocalHTTPServer
 
 
 class ReleaseSecurityTests(unittest.TestCase):
+    def test_discovery_and_checkpoints_fail_closed_for_private_or_unknown_repositories(self):
+        calls = []
+        class Client:
+            def api(self, path, params):
+                calls.append(params)
+                return {"items": [{"full_name": "owner/public", "private": False, "stargazers_count": 2000},
+                                  {"full_name": "private-marker/repo", "private": True, "stargazers_count": 3000},
+                                  {"full_name": "unknown-marker/repo", "stargazers_count": 4000}]}
+        state = {"discovered_repositories": {"legacy-marker/repo": {"name": "legacy-marker/repo"}}}
+        config = {"repositories": [], "collection": {"discovery_queries": ["skills"], "max_repositories": 6}}
+        selected = discover(Client(), config, state, [])
+        self.assertIn("is:public", calls[0]["q"])
+        self.assertEqual([row["name"] for row in selected], ["owner/public"])
+        state["discovered_repositories"]["unverified-marker/repo"] = {"name": "unverified-marker/repo"}
+        exported = json.dumps(public_checkpoint(state))
+        for marker in ("private-marker", "unknown-marker", "legacy-marker", "unverified-marker"):
+            self.assertNotIn(marker, exported)
+        self.assertEqual(set(public_checkpoint(state)["discovered_repositories"]), {"owner/public"})
+
     def test_popular_skill_repositories_need_no_literal_skills_directory(self):
         self.assertTrue(is_skill_path("code-review/SKILL.md"))
         self.assertTrue(is_skill_path(".claude/skills/debug/SKILL.md"))

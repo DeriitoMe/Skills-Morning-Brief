@@ -121,15 +121,16 @@ def _skill_priority(path, covered):
 
 
 def discover(client, config, state, statuses):
-    discovered = dict(state.get("discovered_repositories", {}))
+    discovered = {name: row for name, row in state.get("discovered_repositories", {}).items()
+                  if row.get("verified_public") is True}
     for query in config["collection"]["discovery_queries"]:
         key = "GitHub 发现：" + query
         try:
-            result = client.api("/search/repositories", {"q": query, "sort": "stars", "order": "desc", "per_page": 12})
+            result = client.api("/search/repositories", {"q": query + " is:public", "sort": "stars", "order": "desc", "per_page": 12})
             for row in result.get("items", []):
-                if row.get("fork") or row.get("archived"):
+                if row.get("private") is not False or row.get("visibility", "public") != "public" or row.get("fork") or row.get("archived"):
                     continue
-                discovered[row["full_name"]] = {"name": row["full_name"], "priority": 40, "stars": row["stargazers_count"]}
+                discovered[row["full_name"]] = {"name": row["full_name"], "priority": 40, "stars": row["stargazers_count"], "verified_public": True}
             statuses.append({
                 "source": key,
                 "status": "partial" if result.get("incomplete_results") or result.get("total_count", 0) > 12 else "ok",

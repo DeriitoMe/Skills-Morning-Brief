@@ -19,7 +19,8 @@ def public_checkpoint(state):
         repositories[name] = clean
     return {"repositories": repositories,
             "feeds": {url: {key: row[key] for key in ("fingerprint", "last_success_at") if key in row} for url, row in state.get("feeds", {}).items()},
-            "discovered_repositories": {name: {key: row[key] for key in ("name", "priority", "stars") if key in row} for name, row in state.get("discovered_repositories", {}).items()},
+            "discovered_repositories": {name: {key: row[key] for key in ("name", "priority", "stars", "verified_public") if key in row}
+                                        for name, row in state.get("discovered_repositories", {}).items() if row.get("verified_public") is True},
             "rotation_cursor": state.get("rotation_cursor", 0)}
 
 

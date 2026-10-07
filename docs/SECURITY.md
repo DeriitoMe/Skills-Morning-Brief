@@ -2,6 +2,8 @@
 
 Skills Morning Brief 1.0.0 runs on the current user's machine and binds to `127.0.0.1`. Public Skills and news endpoints use explicit field allowlists. Private inventories, goals, feedback and reports require a launch session; changes additionally require a CSRF token and a local origin.
 
+GitHub discovery forces public search and accepts only metadata explicitly declaring a public repository. Discovery caches and exported checkpoints retain only verified public entries; unknown legacy discovery entries are discarded. This gate applies before repository names and Stars enter distributable discovery metadata.
+
 API keys entered in the page stay in server memory for that provider and workspace. Keys for scheduled operation are read from the user's environment. Requests carrying authorization refuse HTTP redirects. Model errors never include the provider's response body. The browser receives configuration availability, never the key itself.
 
 Personal recommendations send capability names, descriptions and business goals to the selected model. Keep confidential business information out of those fields, or use a local compatible model. Public monitoring uses only public source material. Skills are inspected as documents; their scripts are never automatically executed or installed.
