@@ -2,16 +2,17 @@
   "repositories": {
     "openai/plugins": {
       "repo_id": 1172963839,
-      "tree_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f",
-      "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f",
-      "stars": 7338,
+      "tree_sha": "0722921d5542fc593105c27bd52630babd8b8c2a",
+      "commit_sha": "0722921d5542fc593105c27bd52630babd8b8c2a",
+      "stars": 7345,
       "skill_count": 532,
-      "checked_at": "2026-10-07T18:07:57.262086+00:00",
+      "checked_at": "2026-10-08T07:10:33.202151+00:00",
       "last_complete_at": null,
       "star_snapshots": {
         "2026-10-05": 7310,
         "2026-10-06": 7313,
-        "2026-10-07": 7338
+        "2026-10-07": 7338,
+        "2026-10-08": 7345
       },
       "star_observations": [
         {
@@ -33,11 +34,56 @@
         {
           "captured_at": "2026-10-07T18:07:54.217466+00:00",
           "stars": 7338
+        },
+        {
+          "captured_at": "2026-10-08T00:30:13.243965+00:00",
+          "stars": 7340
+        },
+        {
+          "captured_at": "2026-10-08T07:10:30.625570+00:00",
+          "stars": 7345
         }
       ],
-      "stars_captured_at": "2026-10-07T18:07:54.217466+00:00",
-      "pending_files": 516,
+      "stars_captured_at": "2026-10-08T07:10:30.625570+00:00",
+      "pending_files": 508,
       "candidates": {
+        "plugins/build-ios-apps/skills/swiftui-performance-audit/SKILL.md": {
+          "id": "1172963839:plugins/build-ios-apps/skills/swiftui-performance-audit/SKILL.md",
+          "name": "swiftui-performance-audit",
+          "description": "Audit SwiftUI runtime performance from code first. Use when diagnosing slow rendering, janky scrolling, expensive updates, or profiling needs.",
+          "repository": "openai/plugins",
+          "path": "plugins/build-ios-apps/skills/swiftui-performance-audit/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/build-ios-apps/skills/swiftui-performance-audit/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7340,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:15.747914+00:00",
+          "fingerprint": "ad9eeaa377c6ff861e2cb6f778eae6e701b1335437db300513349a110f2fdeee",
+          "source_fingerprint": "6fc6bd4d49b49ccb2089be706c449f195daa7db2c36d8097d883426488eb4b1a",
+          "official": true,
+          "tags": [
+            "security_review"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/SKILL.md",
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/agents/openai.yaml",
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/references/code-smells.md",
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/references/demystify-swiftui-performance-wwdc23.md",
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/references/optimizing-swiftui-performance-instruments.md",
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/references/profiling-intake.md",
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/references/report-template.md",
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/references/understanding-hangs-in-your-app.md",
+            "plugins/build-ios-apps/skills/swiftui-performance-audit/references/understanding-improving-swiftui-performance.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "db22c9dfb7afa5038243669756e1cb235450ca91",
+          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
+        },
         "plugins/build-web-apps/skills/frontend-app-builder/SKILL.md": {
           "id": "1172963839:plugins/build-web-apps/skills/frontend-app-builder/SKILL.md",
           "name": "frontend-app-builder",
@@ -311,6 +357,62 @@
           "blob_sha": "b56a3b5ed6ea0d6216501e0e401ecb00a1b4675f",
           "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
         },
+        "plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md": {
+          "id": "1172963839:plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md",
+          "name": "dispatching-parallel-agents",
+          "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+          "repository": "openai/plugins",
+          "path": "plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7338,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-07T18:07:55.066447+00:00",
+          "fingerprint": "1fc85dbda450cf41317018cb6c4d34dd83a734bab6edb5c6956738115e7f4e8b",
+          "source_fingerprint": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
+          "official": true,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md",
+            "plugins/superpowers/skills/dispatching-parallel-agents/agents/openai.yaml"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "3fa091b348bbe0a18eaa0e17e9092c97f7005cbe",
+          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
+        },
+        "plugins/superpowers/skills/executing-plans/SKILL.md": {
+          "id": "1172963839:plugins/superpowers/skills/executing-plans/SKILL.md",
+          "name": "executing-plans",
+          "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+          "repository": "openai/plugins",
+          "path": "plugins/superpowers/skills/executing-plans/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/executing-plans/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7338,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-07T18:07:55.651126+00:00",
+          "fingerprint": "b010b75ca4c8e0e8a0025c179c1fbad99cc9605917bfcfe758bb67f7bf50f6bf",
+          "source_fingerprint": "c4c3d8b628c51114cd165fb8246fe02744cd8be180032328391252e653028d9b",
+          "official": true,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/superpowers/skills/executing-plans/SKILL.md",
+            "plugins/superpowers/skills/executing-plans/agents/openai.yaml"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "b51d97d2cc4c2ecc5eabecf27e499aa8c933efac",
+          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
+        },
         "plugins/superpowers/skills/receiving-code-review/SKILL.md": {
           "id": "1172963839:plugins/superpowers/skills/receiving-code-review/SKILL.md",
           "name": "receiving-code-review",
@@ -368,6 +470,40 @@
           "blob_sha": "fa4f2f9965591d6d8a7ef4ad47e6ba4d5ac344d0",
           "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
         },
+        "plugins/superpowers/skills/subagent-driven-development/SKILL.md": {
+          "id": "1172963839:plugins/superpowers/skills/subagent-driven-development/SKILL.md",
+          "name": "subagent-driven-development",
+          "description": "Use when executing implementation plans with independent tasks in the current session",
+          "repository": "openai/plugins",
+          "path": "plugins/superpowers/skills/subagent-driven-development/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/subagent-driven-development/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7338,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-07T18:07:56.456673+00:00",
+          "fingerprint": "10329d948543319f7dcc988e8e48997abb44e7a9f04c064b8087ed725dae2294",
+          "source_fingerprint": "8dd1b8e698edec3700c6d89517dbe96febd3bacd3f6ea21c1a3569c62ea104b5",
+          "official": true,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": true,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/superpowers/skills/subagent-driven-development/SKILL.md",
+            "plugins/superpowers/skills/subagent-driven-development/agents/openai.yaml",
+            "plugins/superpowers/skills/subagent-driven-development/implementer-prompt.md",
+            "plugins/superpowers/skills/subagent-driven-development/re-review-prompt.md",
+            "plugins/superpowers/skills/subagent-driven-development/scripts/review-package",
+            "plugins/superpowers/skills/subagent-driven-development/scripts/sdd-workspace",
+            "plugins/superpowers/skills/subagent-driven-development/scripts/task-brief",
+            "plugins/superpowers/skills/subagent-driven-development/task-reviewer-prompt.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "aac35b91c07af15eca580a205eb0c894b86e87c8",
+          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
+        },
         "plugins/superpowers/skills/systematic-debugging/SKILL.md": {
           "id": "1172963839:plugins/superpowers/skills/systematic-debugging/SKILL.md",
           "name": "systematic-debugging",
@@ -408,96 +544,6 @@
           "blob_sha": "095d194ac041502905f15b01d22d294fb94db8b2",
           "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
         },
-        "plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md": {
-          "id": "1172963839:plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md",
-          "name": "dispatching-parallel-agents",
-          "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
-          "repository": "openai/plugins",
-          "path": "plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md",
-          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md",
-          "repository_url": "https://github.com/openai/plugins",
-          "stars": 7338,
-          "stars_delta_7d": null,
-          "collected_at": "2026-10-07T18:07:55.066447+00:00",
-          "fingerprint": "1fc85dbda450cf41317018cb6c4d34dd83a734bab6edb5c6956738115e7f4e8b",
-          "source_fingerprint": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
-          "official": true,
-          "tags": [],
-          "license": "待核对具体 Skill 的许可",
-          "source_status": "current",
-          "source_text_truncated": false,
-          "compatibility": "",
-          "allowed_tools": "",
-          "dependency_paths": [
-            "plugins/superpowers/skills/dispatching-parallel-agents/SKILL.md",
-            "plugins/superpowers/skills/dispatching-parallel-agents/agents/openai.yaml"
-          ],
-          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
-          "blob_sha": "3fa091b348bbe0a18eaa0e17e9092c97f7005cbe",
-          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
-        },
-        "plugins/superpowers/skills/executing-plans/SKILL.md": {
-          "id": "1172963839:plugins/superpowers/skills/executing-plans/SKILL.md",
-          "name": "executing-plans",
-          "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
-          "repository": "openai/plugins",
-          "path": "plugins/superpowers/skills/executing-plans/SKILL.md",
-          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/executing-plans/SKILL.md",
-          "repository_url": "https://github.com/openai/plugins",
-          "stars": 7338,
-          "stars_delta_7d": null,
-          "collected_at": "2026-10-07T18:07:55.651126+00:00",
-          "fingerprint": "b010b75ca4c8e0e8a0025c179c1fbad99cc9605917bfcfe758bb67f7bf50f6bf",
-          "source_fingerprint": "c4c3d8b628c51114cd165fb8246fe02744cd8be180032328391252e653028d9b",
-          "official": true,
-          "tags": [],
-          "license": "待核对具体 Skill 的许可",
-          "source_status": "current",
-          "source_text_truncated": false,
-          "compatibility": "",
-          "allowed_tools": "",
-          "dependency_paths": [
-            "plugins/superpowers/skills/executing-plans/SKILL.md",
-            "plugins/superpowers/skills/executing-plans/agents/openai.yaml"
-          ],
-          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
-          "blob_sha": "b51d97d2cc4c2ecc5eabecf27e499aa8c933efac",
-          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
-        },
-        "plugins/superpowers/skills/subagent-driven-development/SKILL.md": {
-          "id": "1172963839:plugins/superpowers/skills/subagent-driven-development/SKILL.md",
-          "name": "subagent-driven-development",
-          "description": "Use when executing implementation plans with independent tasks in the current session",
-          "repository": "openai/plugins",
-          "path": "plugins/superpowers/skills/subagent-driven-development/SKILL.md",
-          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/subagent-driven-development/SKILL.md",
-          "repository_url": "https://github.com/openai/plugins",
-          "stars": 7338,
-          "stars_delta_7d": null,
-          "collected_at": "2026-10-07T18:07:56.456673+00:00",
-          "fingerprint": "10329d948543319f7dcc988e8e48997abb44e7a9f04c064b8087ed725dae2294",
-          "source_fingerprint": "8dd1b8e698edec3700c6d89517dbe96febd3bacd3f6ea21c1a3569c62ea104b5",
-          "official": true,
-          "tags": [],
-          "license": "待核对具体 Skill 的许可",
-          "source_status": "current",
-          "source_text_truncated": true,
-          "compatibility": "",
-          "allowed_tools": "",
-          "dependency_paths": [
-            "plugins/superpowers/skills/subagent-driven-development/SKILL.md",
-            "plugins/superpowers/skills/subagent-driven-development/agents/openai.yaml",
-            "plugins/superpowers/skills/subagent-driven-development/implementer-prompt.md",
-            "plugins/superpowers/skills/subagent-driven-development/re-review-prompt.md",
-            "plugins/superpowers/skills/subagent-driven-development/scripts/review-package",
-            "plugins/superpowers/skills/subagent-driven-development/scripts/sdd-workspace",
-            "plugins/superpowers/skills/subagent-driven-development/scripts/task-brief",
-            "plugins/superpowers/skills/subagent-driven-development/task-reviewer-prompt.md"
-          ],
-          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
-          "blob_sha": "aac35b91c07af15eca580a205eb0c894b86e87c8",
-          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
-        },
         "plugins/superpowers/skills/test-driven-development/SKILL.md": {
           "id": "1172963839:plugins/superpowers/skills/test-driven-development/SKILL.md",
           "name": "test-driven-development",
@@ -528,6 +574,221 @@
           "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
           "blob_sha": "4320d8879a639d0536c2239bb80c9d7257ad8947",
           "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
+        },
+        "plugins/superpowers/skills/using-git-worktrees/SKILL.md": {
+          "id": "1172963839:plugins/superpowers/skills/using-git-worktrees/SKILL.md",
+          "name": "using-git-worktrees",
+          "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback",
+          "repository": "openai/plugins",
+          "path": "plugins/superpowers/skills/using-git-worktrees/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/using-git-worktrees/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7340,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:14.061458+00:00",
+          "fingerprint": "aae27fa7d4c0804a0a589b5defdeebf7926491162369e56cd40228b15dc3f101",
+          "source_fingerprint": "8cfb86f121269e8f7f12361e6795c4f6738828340e28964c9229d365666c9edd",
+          "official": true,
+          "tags": [
+            "github_workflow"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/superpowers/skills/using-git-worktrees/SKILL.md",
+            "plugins/superpowers/skills/using-git-worktrees/agents/openai.yaml"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "1381dacb3516b94382dd6ec736ede21ee8ede2b3",
+          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
+        },
+        "plugins/superpowers/skills/verification-before-completion/SKILL.md": {
+          "id": "1172963839:plugins/superpowers/skills/verification-before-completion/SKILL.md",
+          "name": "verification-before-completion",
+          "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+          "repository": "openai/plugins",
+          "path": "plugins/superpowers/skills/verification-before-completion/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/verification-before-completion/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7340,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:14.614301+00:00",
+          "fingerprint": "8e2cedd7ca70582c87cdc22ce8107ef63ae86fd5af384519cba264076214b63d",
+          "source_fingerprint": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+          "official": true,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/superpowers/skills/verification-before-completion/SKILL.md",
+            "plugins/superpowers/skills/verification-before-completion/agents/openai.yaml"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "7d45333cc4a49c57a80df6c1fe2fa777a207afbc",
+          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
+        },
+        "plugins/superpowers/skills/writing-plans/SKILL.md": {
+          "id": "1172963839:plugins/superpowers/skills/writing-plans/SKILL.md",
+          "name": "writing-plans",
+          "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+          "repository": "openai/plugins",
+          "path": "plugins/superpowers/skills/writing-plans/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/superpowers/skills/writing-plans/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7340,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:15.173673+00:00",
+          "fingerprint": "d5dd8ac47d7709c7e1d0afa825761061f1430069920ebe2516c143a631d6805c",
+          "source_fingerprint": "48508f44bbfd7d24b029fbf3a314f3cd14c9615599059366e922f47b8dc08cf2",
+          "official": true,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/superpowers/skills/writing-plans/SKILL.md",
+            "plugins/superpowers/skills/writing-plans/agents/openai.yaml",
+            "plugins/superpowers/skills/writing-plans/plan-document-reviewer-prompt.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "f74605bfa9af7a3fb7e4ad7f17750a86a9b0d728",
+          "commit_sha": "5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f"
+        },
+        "plugins/build-web-data-visualization/skills/testing-data-visualizations/SKILL.md": {
+          "id": "1172963839:plugins/build-web-data-visualization/skills/testing-data-visualizations/SKILL.md",
+          "name": "testing-data-visualizations",
+          "description": "Test data visualizations and dashboards. Use when the user needs chart or diagram test strategy, screenshot or image diff testing, visual regression, mocked or synthetic chart data, component or unit tests, E2E dashboard QA, interactive UML-like diagram verification, scroll-driven story verification, export verification, or guidance on avoiding brittle over-testing.",
+          "repository": "openai/plugins",
+          "path": "plugins/build-web-data-visualization/skills/testing-data-visualizations/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/0722921d5542fc593105c27bd52630babd8b8c2a/plugins/build-web-data-visualization/skills/testing-data-visualizations/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7345,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T07:10:31.459112+00:00",
+          "fingerprint": "fb40ae1f3aeae90522b58739cb044d3d8df6f6195d239e6e5ba7648b6da19a7a",
+          "source_fingerprint": "fba1423c24dac1f401c76d85cbc39d7b354bd2fb18cc9055d62798e6cca6d28e",
+          "official": true,
+          "tags": [
+            "diagrams",
+            "testing"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/build-web-data-visualization/skills/testing-data-visualizations/SKILL.md",
+            "plugins/build-web-data-visualization/skills/testing-data-visualizations/agents/openai.yaml",
+            "plugins/build-web-data-visualization/skills/testing-data-visualizations/references/avoiding-brittle-over-testing.md",
+            "plugins/build-web-data-visualization/skills/testing-data-visualizations/references/data-mocking-and-fixtures.md",
+            "plugins/build-web-data-visualization/skills/testing-data-visualizations/references/e2e-dashboard-and-export-strategies.md",
+            "plugins/build-web-data-visualization/skills/testing-data-visualizations/references/test-level-selection.md",
+            "plugins/build-web-data-visualization/skills/testing-data-visualizations/references/unit-and-component-tests.md",
+            "plugins/build-web-data-visualization/skills/testing-data-visualizations/references/visual-regression-and-image-testing.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "6804377cb3951d990730fe1858db869743fec582",
+          "commit_sha": "0722921d5542fc593105c27bd52630babd8b8c2a"
+        },
+        "plugins/codex-security/skills/assess-patch-risk/SKILL.md": {
+          "id": "1172963839:plugins/codex-security/skills/assess-patch-risk/SKILL.md",
+          "name": "assess-patch-risk",
+          "description": "Assess an immutable patch artifact's program impact, regression risk, and auto-merge eligibility. Use for generated patch files, provider pull-request diffs, or commit ranges when reviewers need evidence about affected runtime paths, contracts, tests, and recoverability. This skill is read-only and does not generate, edit, apply, push, or merge the patch.",
+          "repository": "openai/plugins",
+          "path": "plugins/codex-security/skills/assess-patch-risk/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/0722921d5542fc593105c27bd52630babd8b8c2a/plugins/codex-security/skills/assess-patch-risk/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7345,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T07:10:32.023892+00:00",
+          "fingerprint": "d033b5987671d45241a0508b32796f6d6d01868ac437f8d62bd5eeaad15947e7",
+          "source_fingerprint": "c3b62a8c1d6135945a055134f50329047bb908972fc7b320a592edbc3d38b419",
+          "official": true,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/codex-security/skills/assess-patch-risk/SKILL.md",
+            "plugins/codex-security/skills/assess-patch-risk/agents/openai.yaml",
+            "plugins/codex-security/skills/assess-patch-risk/references/risk-rubric.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "14dbee6cee45a999c031382494a5972d75cecb6f",
+          "commit_sha": "0722921d5542fc593105c27bd52630babd8b8c2a"
+        },
+        "plugins/codex-security/skills/attack-path-analysis/SKILL.md": {
+          "id": "1172963839:plugins/codex-security/skills/attack-path-analysis/SKILL.md",
+          "name": "attack-path-analysis",
+          "description": "Use when Codex is already in the attack-path-analysis phase of a security scan or the user explicitly asks to trace a security finding from source to sink and calibrate severity. Do not use as the primary trigger for full PR, commit, branch, patch, or repository scans.",
+          "repository": "openai/plugins",
+          "path": "plugins/codex-security/skills/attack-path-analysis/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/0722921d5542fc593105c27bd52630babd8b8c2a/plugins/codex-security/skills/attack-path-analysis/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7345,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T07:10:32.624898+00:00",
+          "fingerprint": "a000426f3dab5d033ce3c802a1753e8ff4ce9f18ac5260d08921e5ef535177e8",
+          "source_fingerprint": "9465d2750182acbf6dd8f61e60bb47dc1ca502be5cc3f4a71da7ad39935d1eb1",
+          "official": true,
+          "tags": [
+            "security_review"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/codex-security/skills/attack-path-analysis/SKILL.md",
+            "plugins/codex-security/skills/attack-path-analysis/agents/openai.yaml",
+            "plugins/codex-security/skills/attack-path-analysis/references/attack-path-facts.md",
+            "plugins/codex-security/skills/attack-path-analysis/references/severity-policy.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "cbcd539decd593a5a4fb9397a7ed3a98cb2a8c99",
+          "commit_sha": "0722921d5542fc593105c27bd52630babd8b8c2a"
+        },
+        "plugins/codex-security/skills/deep-security-scan/SKILL.md": {
+          "id": "1172963839:plugins/codex-security/skills/deep-security-scan/SKILL.md",
+          "name": "deep-security-scan",
+          "description": "Use when the user asks for a deep, exhaustive, multi-pass, or variance-reducing repository-wide or scoped-path Codex Security scan. Run repeated complete independent Standard scans with the Codex Security deep-scan tool, which aggregates their validated findings and prepares the canonical artifacts; then complete the same scan once. Do not use for PRs, commits, branch diffs, or working-tree diffs.",
+          "repository": "openai/plugins",
+          "path": "plugins/codex-security/skills/deep-security-scan/SKILL.md",
+          "url": "https://github.com/openai/plugins/blob/0722921d5542fc593105c27bd52630babd8b8c2a/plugins/codex-security/skills/deep-security-scan/SKILL.md",
+          "repository_url": "https://github.com/openai/plugins",
+          "stars": 7345,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T07:10:33.201733+00:00",
+          "fingerprint": "5b87500310a1374bc6b3e84257c685842be1b540e74154481517e89438d1aaeb",
+          "source_fingerprint": "d6aed0d9b47065a1384a96d0a45c843b0cda8ba48e3d2cbe96c65357c6e55ee3",
+          "official": true,
+          "tags": [
+            "security_review"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/codex-security/skills/deep-security-scan/SKILL.md",
+            "plugins/codex-security/skills/deep-security-scan/agents/openai.yaml"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "ef4cd1932d560ed8990e95cf887a373aae14cd11",
+          "commit_sha": "0722921d5542fc593105c27bd52630babd8b8c2a"
         }
       }
     },
@@ -535,14 +796,15 @@
       "repo_id": 1061953414,
       "tree_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
       "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
-      "stars": 180031,
+      "stars": 180092,
       "skill_count": 19,
-      "checked_at": "2026-10-07T18:08:01.844850+00:00",
+      "checked_at": "2026-10-08T07:10:35.850834+00:00",
       "last_complete_at": null,
       "star_snapshots": {
         "2026-10-05": 179773,
         "2026-10-06": 179818,
-        "2026-10-07": 180031
+        "2026-10-07": 180031,
+        "2026-10-08": 180092
       },
       "star_observations": [
         {
@@ -564,9 +826,17 @@
         {
           "captured_at": "2026-10-07T18:07:59.480401+00:00",
           "stars": 180031
+        },
+        {
+          "captured_at": "2026-10-08T00:30:17.730924+00:00",
+          "stars": 180057
+        },
+        {
+          "captured_at": "2026-10-08T07:10:35.273410+00:00",
+          "stars": 180092
         }
       ],
-      "stars_captured_at": "2026-10-07T18:07:59.480401+00:00",
+      "stars_captured_at": "2026-10-08T07:10:35.273410+00:00",
       "pending_files": 1,
       "candidates": {
         "skills/academy-guide/SKILL.md": {
@@ -1181,6 +1451,111 @@
           "blob_sha": "65b3a402dbd09b8e83f9d637c6b553875189085c",
           "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
         },
+        "skills/slack-gif-creator/SKILL.md": {
+          "id": "1061953414:skills/slack-gif-creator/SKILL.md",
+          "name": "slack-gif-creator",
+          "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.",
+          "repository": "anthropics/skills",
+          "path": "skills/slack-gif-creator/SKILL.md",
+          "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/slack-gif-creator/SKILL.md",
+          "repository_url": "https://github.com/anthropics/skills",
+          "stars": 180031,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-07T18:08:00.655802+00:00",
+          "fingerprint": "a84e46837c9c5f76d6b42e070c4d65bebb0fe829a9c79d1f37a44defe7131cc1",
+          "source_fingerprint": "2efca615ce55a3edd8fc05c779068a8085816617991987e446606403cd3abb22",
+          "official": true,
+          "tags": [],
+          "license": "Complete terms in LICENSE.txt",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/slack-gif-creator/LICENSE.txt",
+            "skills/slack-gif-creator/SKILL.md",
+            "skills/slack-gif-creator/core/easing.py",
+            "skills/slack-gif-creator/core/frame_composer.py",
+            "skills/slack-gif-creator/core/gif_builder.py",
+            "skills/slack-gif-creator/core/validators.py",
+            "skills/slack-gif-creator/requirements.txt"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "16660d8ceb77af47986bba1c9176c2ff3f287a91",
+          "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
+        },
+        "skills/theme-factory/SKILL.md": {
+          "id": "1061953414:skills/theme-factory/SKILL.md",
+          "name": "theme-factory",
+          "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+          "repository": "anthropics/skills",
+          "path": "skills/theme-factory/SKILL.md",
+          "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/theme-factory/SKILL.md",
+          "repository_url": "https://github.com/anthropics/skills",
+          "stars": 180031,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-07T18:08:01.242862+00:00",
+          "fingerprint": "6f763920a81514c7ed4f4e6b8438075c327972cfdb45b1b18b5bb139f3c6dd6a",
+          "source_fingerprint": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
+          "official": true,
+          "tags": [],
+          "license": "Complete terms in LICENSE.txt",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/theme-factory/LICENSE.txt",
+            "skills/theme-factory/SKILL.md",
+            "skills/theme-factory/theme-showcase.pdf",
+            "skills/theme-factory/themes/arctic-frost.md",
+            "skills/theme-factory/themes/botanical-garden.md",
+            "skills/theme-factory/themes/desert-rose.md",
+            "skills/theme-factory/themes/forest-canopy.md",
+            "skills/theme-factory/themes/golden-hour.md",
+            "skills/theme-factory/themes/midnight-galaxy.md",
+            "skills/theme-factory/themes/modern-minimalist.md",
+            "skills/theme-factory/themes/ocean-depths.md",
+            "skills/theme-factory/themes/sunset-boulevard.md",
+            "skills/theme-factory/themes/tech-innovation.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "90dfceaf2ecdc191a4dcfb0069768a9560638998",
+          "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
+        },
+        "skills/web-artifacts-builder/SKILL.md": {
+          "id": "1061953414:skills/web-artifacts-builder/SKILL.md",
+          "name": "web-artifacts-builder",
+          "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+          "repository": "anthropics/skills",
+          "path": "skills/web-artifacts-builder/SKILL.md",
+          "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/web-artifacts-builder/SKILL.md",
+          "repository_url": "https://github.com/anthropics/skills",
+          "stars": 180031,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-07T18:08:01.844530+00:00",
+          "fingerprint": "7bdd25024b64034760e868d4b47be82a798127c00870bf0ba2765da5083809ac",
+          "source_fingerprint": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
+          "official": true,
+          "tags": [
+            "frontend_design"
+          ],
+          "license": "Complete terms in LICENSE.txt",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/web-artifacts-builder/LICENSE.txt",
+            "skills/web-artifacts-builder/SKILL.md",
+            "skills/web-artifacts-builder/scripts/bundle-artifact.sh",
+            "skills/web-artifacts-builder/scripts/init-artifact.sh",
+            "skills/web-artifacts-builder/scripts/shadcn-components.tar.gz"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "8b39b19f259b4216ecb07574741dd8eaa9863a07",
+          "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
+        },
         "skills/webapp-testing/SKILL.md": {
           "id": "1061953414:skills/webapp-testing/SKILL.md",
           "name": "webapp-testing",
@@ -1298,111 +1673,6 @@
           ],
           "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
           "blob_sha": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
-          "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
-        },
-        "skills/slack-gif-creator/SKILL.md": {
-          "id": "1061953414:skills/slack-gif-creator/SKILL.md",
-          "name": "slack-gif-creator",
-          "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.",
-          "repository": "anthropics/skills",
-          "path": "skills/slack-gif-creator/SKILL.md",
-          "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/slack-gif-creator/SKILL.md",
-          "repository_url": "https://github.com/anthropics/skills",
-          "stars": 180031,
-          "stars_delta_7d": null,
-          "collected_at": "2026-10-07T18:08:00.655802+00:00",
-          "fingerprint": "a84e46837c9c5f76d6b42e070c4d65bebb0fe829a9c79d1f37a44defe7131cc1",
-          "source_fingerprint": "2efca615ce55a3edd8fc05c779068a8085816617991987e446606403cd3abb22",
-          "official": true,
-          "tags": [],
-          "license": "Complete terms in LICENSE.txt",
-          "source_status": "current",
-          "source_text_truncated": false,
-          "compatibility": "",
-          "allowed_tools": "",
-          "dependency_paths": [
-            "skills/slack-gif-creator/LICENSE.txt",
-            "skills/slack-gif-creator/SKILL.md",
-            "skills/slack-gif-creator/core/easing.py",
-            "skills/slack-gif-creator/core/frame_composer.py",
-            "skills/slack-gif-creator/core/gif_builder.py",
-            "skills/slack-gif-creator/core/validators.py",
-            "skills/slack-gif-creator/requirements.txt"
-          ],
-          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
-          "blob_sha": "16660d8ceb77af47986bba1c9176c2ff3f287a91",
-          "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
-        },
-        "skills/theme-factory/SKILL.md": {
-          "id": "1061953414:skills/theme-factory/SKILL.md",
-          "name": "theme-factory",
-          "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
-          "repository": "anthropics/skills",
-          "path": "skills/theme-factory/SKILL.md",
-          "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/theme-factory/SKILL.md",
-          "repository_url": "https://github.com/anthropics/skills",
-          "stars": 180031,
-          "stars_delta_7d": null,
-          "collected_at": "2026-10-07T18:08:01.242862+00:00",
-          "fingerprint": "6f763920a81514c7ed4f4e6b8438075c327972cfdb45b1b18b5bb139f3c6dd6a",
-          "source_fingerprint": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
-          "official": true,
-          "tags": [],
-          "license": "Complete terms in LICENSE.txt",
-          "source_status": "current",
-          "source_text_truncated": false,
-          "compatibility": "",
-          "allowed_tools": "",
-          "dependency_paths": [
-            "skills/theme-factory/LICENSE.txt",
-            "skills/theme-factory/SKILL.md",
-            "skills/theme-factory/theme-showcase.pdf",
-            "skills/theme-factory/themes/arctic-frost.md",
-            "skills/theme-factory/themes/botanical-garden.md",
-            "skills/theme-factory/themes/desert-rose.md",
-            "skills/theme-factory/themes/forest-canopy.md",
-            "skills/theme-factory/themes/golden-hour.md",
-            "skills/theme-factory/themes/midnight-galaxy.md",
-            "skills/theme-factory/themes/modern-minimalist.md",
-            "skills/theme-factory/themes/ocean-depths.md",
-            "skills/theme-factory/themes/sunset-boulevard.md",
-            "skills/theme-factory/themes/tech-innovation.md"
-          ],
-          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
-          "blob_sha": "90dfceaf2ecdc191a4dcfb0069768a9560638998",
-          "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
-        },
-        "skills/web-artifacts-builder/SKILL.md": {
-          "id": "1061953414:skills/web-artifacts-builder/SKILL.md",
-          "name": "web-artifacts-builder",
-          "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
-          "repository": "anthropics/skills",
-          "path": "skills/web-artifacts-builder/SKILL.md",
-          "url": "https://github.com/anthropics/skills/blob/683bc88e56f3e09ba94f7055977f3d3aa499f202/skills/web-artifacts-builder/SKILL.md",
-          "repository_url": "https://github.com/anthropics/skills",
-          "stars": 180031,
-          "stars_delta_7d": null,
-          "collected_at": "2026-10-07T18:08:01.844530+00:00",
-          "fingerprint": "7bdd25024b64034760e868d4b47be82a798127c00870bf0ba2765da5083809ac",
-          "source_fingerprint": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
-          "official": true,
-          "tags": [
-            "frontend_design"
-          ],
-          "license": "Complete terms in LICENSE.txt",
-          "source_status": "current",
-          "source_text_truncated": false,
-          "compatibility": "",
-          "allowed_tools": "",
-          "dependency_paths": [
-            "skills/web-artifacts-builder/LICENSE.txt",
-            "skills/web-artifacts-builder/SKILL.md",
-            "skills/web-artifacts-builder/scripts/bundle-artifact.sh",
-            "skills/web-artifacts-builder/scripts/init-artifact.sh",
-            "skills/web-artifacts-builder/scripts/shadcn-components.tar.gz"
-          ],
-          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
-          "blob_sha": "8b39b19f259b4216ecb07574741dd8eaa9863a07",
           "commit_sha": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
         }
       }
@@ -3768,18 +4038,678 @@
           "commit_sha": "882004e083964c52b8e7130a7ba04a05ed72f057"
         }
       }
+    },
+    "farion1231/cc-switch": {
+      "repo_id": 1031912724,
+      "tree_sha": "f9db9f7056cbe7f972cdc02644722002316866b9",
+      "commit_sha": "f9db9f7056cbe7f972cdc02644722002316866b9",
+      "stars": 140783,
+      "skill_count": 0,
+      "checked_at": "2026-10-08T00:30:20.694396+00:00",
+      "last_complete_at": "2026-10-08T00:30:20.694399+00:00",
+      "star_snapshots": {
+        "2026-10-08": 140783
+      },
+      "star_observations": [
+        {
+          "captured_at": "2026-10-08T00:30:20.694365+00:00",
+          "stars": 140783
+        }
+      ],
+      "stars_captured_at": "2026-10-08T00:30:20.694365+00:00",
+      "pending_files": 0,
+      "candidates": {}
+    },
+    "mattpocock/skills": {
+      "repo_id": 1148788086,
+      "tree_sha": "f3fc5632f401156837ee3872f14fe33ccf1024ea",
+      "commit_sha": "f3fc5632f401156837ee3872f14fe33ccf1024ea",
+      "stars": 279578,
+      "skill_count": 38,
+      "checked_at": "2026-10-08T00:30:24.677873+00:00",
+      "last_complete_at": null,
+      "star_snapshots": {
+        "2026-10-08": 279578
+      },
+      "star_observations": [
+        {
+          "captured_at": "2026-10-08T00:30:22.506838+00:00",
+          "stars": 279578
+        }
+      ],
+      "stars_captured_at": "2026-10-08T00:30:22.506838+00:00",
+      "pending_files": 34,
+      "candidates": {
+        "skills/engineering/tdd/SKILL.md": {
+          "id": "1148788086:skills/engineering/tdd/SKILL.md",
+          "name": "tdd",
+          "description": "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions \"red-green-refactor\", or wants integration tests.",
+          "repository": "mattpocock/skills",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "url": "https://github.com/mattpocock/skills/blob/f3fc5632f401156837ee3872f14fe33ccf1024ea/skills/engineering/tdd/SKILL.md",
+          "repository_url": "https://github.com/mattpocock/skills",
+          "stars": 279578,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:23.048954+00:00",
+          "fingerprint": "d2ff6f9489f1031b175dedfee8e9df23cc0c337e3282979ce243d05f85813c44",
+          "source_fingerprint": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0",
+          "official": false,
+          "tags": [
+            "testing"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/engineering/tdd/SKILL.md",
+            "skills/engineering/tdd/agents/openai.yaml",
+            "skills/engineering/tdd/mocking.md",
+            "skills/engineering/tdd/tests.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "01eadaa34e7c9a63a67d6dc3cce1cc81b0e49985",
+          "commit_sha": "f3fc5632f401156837ee3872f14fe33ccf1024ea"
+        },
+        "skills/engineering/code-review/SKILL.md": {
+          "id": "1148788086:skills/engineering/code-review/SKILL.md",
+          "name": "code-review",
+          "description": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \\\"review since X\\\".",
+          "repository": "mattpocock/skills",
+          "path": "skills/engineering/code-review/SKILL.md",
+          "url": "https://github.com/mattpocock/skills/blob/f3fc5632f401156837ee3872f14fe33ccf1024ea/skills/engineering/code-review/SKILL.md",
+          "repository_url": "https://github.com/mattpocock/skills",
+          "stars": 279578,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:23.603930+00:00",
+          "fingerprint": "909442bb5c0fa194ba496496616b89830e9135e3b48cf800fd939a8b7e6dac3b",
+          "source_fingerprint": "09eb147f793e4647949edd32dbad278f0554dfb56e0d46b699cd4c2c55bf0357",
+          "official": false,
+          "tags": [
+            "coding"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/engineering/code-review/SKILL.md",
+            "skills/engineering/code-review/agents/openai.yaml"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "373a4f26e6cfa3617778397945bb069d9cb184bc",
+          "commit_sha": "f3fc5632f401156837ee3872f14fe33ccf1024ea"
+        },
+        "skills/in-progress/writing-fragments/SKILL.md": {
+          "id": "1148788086:skills/in-progress/writing-fragments/SKILL.md",
+          "name": "writing-fragments",
+          "description": "Writing, explore: mine raw fragments, no structure yet.",
+          "repository": "mattpocock/skills",
+          "path": "skills/in-progress/writing-fragments/SKILL.md",
+          "url": "https://github.com/mattpocock/skills/blob/f3fc5632f401156837ee3872f14fe33ccf1024ea/skills/in-progress/writing-fragments/SKILL.md",
+          "repository_url": "https://github.com/mattpocock/skills",
+          "stars": 279578,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:24.114828+00:00",
+          "fingerprint": "239700be48563211d5a974453fdeefc5f69128915eff053f110f547ee94ea13f",
+          "source_fingerprint": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+          "official": false,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/in-progress/writing-fragments/SKILL.md",
+            "skills/in-progress/writing-fragments/agents/openai.yaml"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "c7c889b880cf9c8d289119dea5ff240641b615ca",
+          "commit_sha": "f3fc5632f401156837ee3872f14fe33ccf1024ea"
+        },
+        "skills/engineering/ask-matt/SKILL.md": {
+          "id": "1148788086:skills/engineering/ask-matt/SKILL.md",
+          "name": "ask-matt",
+          "description": "Ask which skill or flow fits your situation. A router over the skills in this repo.",
+          "repository": "mattpocock/skills",
+          "path": "skills/engineering/ask-matt/SKILL.md",
+          "url": "https://github.com/mattpocock/skills/blob/f3fc5632f401156837ee3872f14fe33ccf1024ea/skills/engineering/ask-matt/SKILL.md",
+          "repository_url": "https://github.com/mattpocock/skills",
+          "stars": 279578,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:24.677717+00:00",
+          "fingerprint": "004ecebff44cf5ac478229364d6a5ad01a7d498a4dd0f00f89e34cd4eca20a8b",
+          "source_fingerprint": "1371f5ce005de0992a44b137748bfb960a56948aa9871b405fe9d90b24332e3c",
+          "official": false,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+            "skills/engineering/ask-matt/SKILL.md",
+            "skills/engineering/ask-matt/agents/openai.yaml"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "4bfeeb61dae548b8b7754c4fba7bd40ab3926099",
+          "commit_sha": "f3fc5632f401156837ee3872f14fe33ccf1024ea"
+        }
+      }
+    },
+    "msitarzewski/agency-agents": {
+      "repo_id": 1075372545,
+      "tree_sha": "f99f6aa910a442b0197b768ce0ea7751e35e2060",
+      "commit_sha": "f99f6aa910a442b0197b768ce0ea7751e35e2060",
+      "stars": 158262,
+      "skill_count": 0,
+      "checked_at": "2026-10-08T00:30:26.521039+00:00",
+      "last_complete_at": "2026-10-08T00:30:26.521041+00:00",
+      "star_snapshots": {
+        "2026-10-08": 158262
+      },
+      "star_observations": [
+        {
+          "captured_at": "2026-10-08T00:30:26.521016+00:00",
+          "stars": 158262
+        }
+      ],
+      "stars_captured_at": "2026-10-08T00:30:26.521016+00:00",
+      "pending_files": 0,
+      "candidates": {}
+    },
+    "nexu-io/open-design": {
+      "repo_id": 1223170290,
+      "tree_sha": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+      "commit_sha": "53231d40b778d88eba23f35547bf99485d3ae9fc",
+      "stars": 99873,
+      "skill_count": 338,
+      "checked_at": "2026-10-08T00:30:31.959022+00:00",
+      "last_complete_at": null,
+      "star_snapshots": {
+        "2026-10-08": 99873
+      },
+      "star_observations": [
+        {
+          "captured_at": "2026-10-08T00:30:29.402165+00:00",
+          "stars": 99873
+        }
+      ],
+      "stars_captured_at": "2026-10-08T00:30:29.402165+00:00",
+      "pending_files": 334,
+      "candidates": {
+        "skills/frontend-design/SKILL.md": {
+          "id": "1223170290:skills/frontend-design/SKILL.md",
+          "name": "frontend-design",
+          "description": "Create distinctive, production-grade frontend interfaces with strong visual direction, polished typography, considered layout, and working HTML/CSS/JS or framework code. Use for websites, landing pages, dashboards, React components, application screens, and UI beautification.",
+          "repository": "nexu-io/open-design",
+          "path": "skills/frontend-design/SKILL.md",
+          "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/frontend-design/SKILL.md",
+          "repository_url": "https://github.com/nexu-io/open-design",
+          "stars": 99873,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:30.369276+00:00",
+          "fingerprint": "ec19cb7b4b99dd0880e934cefce6f8ceb342fd8e5cb6b8b2382c48f5f48d3085",
+          "source_fingerprint": "6963d8b4ae3d285b021342db2d797ec7aeaabbfd82ffefe9c90607e8a416b116",
+          "official": false,
+          "tags": [
+            "frontend_design"
+          ],
+          "license": "Complete terms in LICENSE.txt",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/frontend-design/LICENSE.txt",
+            "skills/frontend-design/SKILL.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "43fa4a5860b97b192fe05d67c6bd2d97bc643d3f",
+          "commit_sha": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+        },
+        "skills/brainstorming/SKILL.md": {
+          "id": "1223170290:skills/brainstorming/SKILL.md",
+          "name": "brainstorming",
+          "description": "Transform rough ideas into fully-formed designs through structured questioning and alternative exploration. Useful early in concept work.",
+          "repository": "nexu-io/open-design",
+          "path": "skills/brainstorming/SKILL.md",
+          "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/skills/brainstorming/SKILL.md",
+          "repository_url": "https://github.com/nexu-io/open-design",
+          "stars": 99873,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:30.879246+00:00",
+          "fingerprint": "78e72693e3873d9acccc66ecccbfded36b472df8b68624e27c59ad59907c0c55",
+          "source_fingerprint": "8e9f6e35e3fd31fb1bf5fb417330c4ed61bfb9120ef50cbc161befe8e77e2fa5",
+          "official": false,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "skills/brainstorming/SKILL.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "f7939886503208debbb8fabf8daf5fae6a91b25f",
+          "commit_sha": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+        },
+        "design-templates/html-ppt-testing-safety-alert/SKILL.md": {
+          "id": "1223170290:design-templates/html-ppt-testing-safety-alert/SKILL.md",
+          "name": "html-ppt-testing-safety-alert",
+          "description": "A hospital data-governance briefing: patient-data risk, the control framework, accountability, and the approval the board must give. Built as a decision-grade policy briefing deck for health-system board, regulators.",
+          "repository": "nexu-io/open-design",
+          "path": "design-templates/html-ppt-testing-safety-alert/SKILL.md",
+          "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/design-templates/html-ppt-testing-safety-alert/SKILL.md",
+          "repository_url": "https://github.com/nexu-io/open-design",
+          "stars": 99873,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:31.420611+00:00",
+          "fingerprint": "fd1abc515f737b8d4e9b3b9fd5de42905e0e1ea37f135b04e07d576b3c254bfe",
+          "source_fingerprint": "6d7a7f09fea9fcc379d7f9a2fdae7c2a0139abc60dba3964059728fe23a254f1",
+          "official": false,
+          "tags": [
+            "testing"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "design-templates/html-ppt-testing-safety-alert/SKILL.md",
+            "design-templates/html-ppt-testing-safety-alert/example.html"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "cf8255c55a5cd4748d35d84072c99da4e004b789",
+          "commit_sha": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+        },
+        "plugins/community/clone-audit-mrlv3nl4/SKILL.md": {
+          "id": "1223170290:plugins/community/clone-audit-mrlv3nl4/SKILL.md",
+          "name": "clone-audit-mrlv3nl4",
+          "description": "Audit cloned or reimplemented websites for fidelity gaps, tracking scripts, source-brand and language residue, placeholders, and risky external dependencies. Use before handoff or deployment, or when asked to review a website clone for cleanup and readiness.",
+          "repository": "nexu-io/open-design",
+          "path": "plugins/community/clone-audit-mrlv3nl4/SKILL.md",
+          "url": "https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/plugins/community/clone-audit-mrlv3nl4/SKILL.md",
+          "repository_url": "https://github.com/nexu-io/open-design",
+          "stars": 99873,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T00:30:31.958500+00:00",
+          "fingerprint": "74cfde11064435eef6f9f45a2e64418c7e4b572853c45688955b4cda44c7c73f",
+          "source_fingerprint": "8ded19c60deb7ddcc45ab856c4e71f6271239d83ec7015234de8e33f6546402a",
+          "official": false,
+          "tags": [
+            "security_review"
+          ],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "plugins/community/clone-audit-mrlv3nl4/SKILL.md",
+            "plugins/community/clone-audit-mrlv3nl4/open-design.json",
+            "plugins/community/clone-audit-mrlv3nl4/references/provenance.json",
+            "plugins/community/clone-audit-mrlv3nl4/references/source-1-CLONE_AUDIT.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "df5ef45847756e4c30fc8d5552f1be1947d2f533",
+          "commit_sha": "53231d40b778d88eba23f35547bf99485d3ae9fc"
+        }
+      }
+    },
+    "public-apis/public-apis": {
+      "repo_id": 54346799,
+      "tree_sha": "874e5879d20843f7c2a5822cef4c0752127b3775",
+      "commit_sha": "874e5879d20843f7c2a5822cef4c0752127b3775",
+      "stars": 486839,
+      "skill_count": 0,
+      "checked_at": "2026-10-08T07:10:42.506972+00:00",
+      "last_complete_at": "2026-10-08T07:10:42.506975+00:00",
+      "star_snapshots": {
+        "2026-10-08": 486839
+      },
+      "star_observations": [
+        {
+          "captured_at": "2026-10-08T07:10:42.506948+00:00",
+          "stars": 486839
+        }
+      ],
+      "stars_captured_at": "2026-10-08T07:10:42.506948+00:00",
+      "pending_files": 0,
+      "candidates": {}
+    },
+    "ripienaar/free-for-dev": {
+      "repo_id": 32484381,
+      "tree_sha": "291770373b6d10934bd883bf7cd25b136f65d6ba",
+      "commit_sha": "291770373b6d10934bd883bf7cd25b136f65d6ba",
+      "stars": 139372,
+      "skill_count": 0,
+      "checked_at": "2026-10-08T07:10:44.220240+00:00",
+      "last_complete_at": "2026-10-08T07:10:44.220245+00:00",
+      "star_snapshots": {
+        "2026-10-08": 139372
+      },
+      "star_observations": [
+        {
+          "captured_at": "2026-10-08T07:10:44.220216+00:00",
+          "stars": 139372
+        }
+      ],
+      "stars_captured_at": "2026-10-08T07:10:44.220216+00:00",
+      "pending_files": 0,
+      "candidates": {}
+    },
+    "tt-a1i/archify": {
+      "repo_id": 1211139949,
+      "tree_sha": "73aaa0696e8f72c232ea710e6fa94fd953f3e773",
+      "commit_sha": "73aaa0696e8f72c232ea710e6fa94fd953f3e773",
+      "stars": 79444,
+      "skill_count": 2,
+      "checked_at": "2026-10-08T07:10:47.365740+00:00",
+      "last_complete_at": "2026-10-08T07:10:47.365744+00:00",
+      "star_snapshots": {
+        "2026-10-08": 79444
+      },
+      "star_observations": [
+        {
+          "captured_at": "2026-10-08T07:10:46.239628+00:00",
+          "stars": 79444
+        }
+      ],
+      "stars_captured_at": "2026-10-08T07:10:46.239628+00:00",
+      "pending_files": 0,
+      "candidates": {
+        ".agents/skills/archify-review/SKILL.md": {
+          "id": "1211139949:.agents/skills/archify-review/SKILL.md",
+          "name": "archify-review",
+          "description": "Review Archify issues, PRs, or code through value, cost, and impact to support evidence-based maintenance decisions. Use for issue triage, change reviews, and code quality assessments.",
+          "repository": "tt-a1i/archify",
+          "path": ".agents/skills/archify-review/SKILL.md",
+          "url": "https://github.com/tt-a1i/archify/blob/73aaa0696e8f72c232ea710e6fa94fd953f3e773/.agents/skills/archify-review/SKILL.md",
+          "repository_url": "https://github.com/tt-a1i/archify",
+          "stars": 79444,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T07:10:46.810397+00:00",
+          "fingerprint": "8249b41714349f7a41f7cbecd43ec33623059c00c45b199dc64feafbe9448095",
+          "source_fingerprint": "811eb78d69360b741475053a08a0060e60126af2405ffa24afdc0498f17b6cb8",
+          "official": false,
+          "tags": [],
+          "license": "待核对具体 Skill 的许可",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            ".agents/skills/archify-review/SKILL.md"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "d28b635c84b1c66dbadc015058a6c91224933841",
+          "commit_sha": "73aaa0696e8f72c232ea710e6fa94fd953f3e773"
+        },
+        "archify/SKILL.md": {
+          "id": "1211139949:archify/SKILL.md",
+          "name": "archify",
+          "description": "Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Accept plain-language requirements or pasted Mermaid flowchart, sequenceDiagram, and stateDiagram input; inspect repository evidence when the diagram must reflect real code. Use when the user asks to visualize system architecture, infrastructure, cloud/security/network topology, technical workflows, API call sequences, request lifecycles, data pipelines, ETL/ELT, data lineage, state machines, or to convert/beautify Mermaid. Also use for everyday subjects with steps, parts, relationships, or states: a leave or travel plan, an application or approval process, a back-and-forth such as renting, where money or documents go, or where an application or order stands. Not for numeric charts or dashboards.",
+          "repository": "tt-a1i/archify",
+          "path": "archify/SKILL.md",
+          "url": "https://github.com/tt-a1i/archify/blob/73aaa0696e8f72c232ea710e6fa94fd953f3e773/archify/SKILL.md",
+          "repository_url": "https://github.com/tt-a1i/archify",
+          "stars": 79444,
+          "stars_delta_7d": null,
+          "collected_at": "2026-10-08T07:10:47.365020+00:00",
+          "fingerprint": "edc5de87afc0f5dd78a057c19861c86f74509afc82edb53ca56dd89809e6fbe2",
+          "source_fingerprint": "cf348309c5350c285714151a409d7451669fe00f4537824c38038a6e18767b6d",
+          "official": false,
+          "tags": [
+            "diagrams",
+            "documents",
+            "security_review"
+          ],
+          "license": "MIT",
+          "source_status": "current",
+          "source_text_truncated": false,
+          "compatibility": "",
+          "allowed_tools": "",
+          "dependency_paths": [
+            "archify/LICENSE",
+            "archify/SKILL.md",
+            "archify/THIRD_PARTY_NOTICES.md",
+            "archify/assets/JetBrainsMono-OFL.txt",
+            "archify/assets/template.html",
+            "archify/bin/archify.mjs",
+            "archify/bin/delivery-update.mjs",
+            "archify/bin/finalize.mjs",
+            "archify/bin/open-artifact.mjs",
+            "archify/bin/preview.mjs",
+            "archify/bin/recover-output.mjs",
+            "archify/bin/visual-check.mjs",
+            "archify/brand-marks/README.md",
+            "archify/brand-marks/catalog.json",
+            "archify/delta/architecture-delta.mjs",
+            "archify/examples/agent-run.lifecycle.json",
+            "archify/examples/agent-tool-call.workflow.json",
+            "archify/examples/async-job-roundtrip.sequence.json",
+            "archify/examples/brand-aware-delivery.architecture.json",
+            "archify/examples/cache-miss-request.sequence.json",
+            "archify/examples/checkout-platform.base.architecture.json",
+            "archify/examples/checkout-platform.head.architecture.json",
+            "archify/examples/dataflow-product-analytics.html",
+            "archify/examples/deployment-release.lifecycle.json",
+            "archify/examples/event-stream.dataflow.json",
+            "archify/examples/holiday-planning.workflow.json",
+            "archify/examples/incident-response.workflow.json",
+            "archify/examples/lifecycle-agent-run.html",
+            "archify/examples/locales/de.json",
+            "archify/examples/locales/es.json",
+            "archify/examples/locales/fr.json",
+            "archify/examples/locales/fr.partial.json",
+            "archify/examples/locales/it.json",
+            "archify/examples/locales/ja.json",
+            "archify/examples/locales/ko.json",
+            "archify/examples/locales/pt.json",
+            "archify/examples/locales/ru.json",
+            "archify/examples/product-analytics.dataflow.json",
+            "archify/examples/production-deployment.architecture.json",
+            "archify/examples/release-delivery.workflow.json",
+            "archify/examples/sequence-cache-miss-request.html",
+            "archify/examples/web-app-rendered.html",
+            "archify/examples/web-app.architecture.json",
+            "archify/examples/workflow-agent-tool-call-rendered.html",
+            "archify/migrations/workflow-v2.mjs",
+            "archify/package-lock.json",
+            "archify/package.json",
+            "archify/recipes/scenarios.mjs",
+            "archify/references/architecture-layout-repair.md",
+            "archify/references/authoring-contract.md",
+            "archify/references/authoring-defaults.md",
+            "archify/references/brand-marks.md",
+            "archify/references/delivery-contract.md",
+            "archify/references/repository-authoring.md",
+            "archify/references/update-awareness.md",
+            "archify/references/viewer-runtime.md",
+            "archify/renderers/architecture/grid.mjs",
+            "archify/renderers/architecture/labels.mjs",
+            "archify/renderers/architecture/render-architecture.mjs",
+            "archify/renderers/architecture/routing.mjs",
+            "archify/renderers/dataflow/README.md",
+            "archify/renderers/dataflow/render-dataflow.mjs",
+            "archify/renderers/lifecycle/README.md",
+            "archify/renderers/lifecycle/grid-routing.mjs",
+            "archify/renderers/lifecycle/render-lifecycle.mjs",
+            "archify/renderers/sequence/README.md",
+            "archify/renderers/sequence/render-sequence.mjs",
+            "archify/renderers/shared/atomic-output.mjs",
+            "archify/renderers/shared/brand-marks.mjs",
+            "archify/renderers/shared/cli.mjs",
+            "archify/renderers/shared/desktop-readability.mjs",
+            "archify/renderers/shared/diagnostics.mjs",
+            "archify/renderers/shared/engineering-profiles.mjs",
+            "archify/renderers/shared/generated-brand-marks.mjs",
+            "archify/renderers/shared/generated-validators.mjs",
+            "archify/renderers/shared/geometry.mjs",
+            "archify/renderers/shared/i18n.mjs",
+            "archify/renderers/shared/layout-report.mjs",
+            "archify/renderers/shared/legend.mjs",
+            "archify/renderers/shared/output-path.mjs",
+            "archify/renderers/shared/path-semantics.mjs",
+            "archify/renderers/shared/portable-path.mjs",
+            "archify/renderers/shared/repository-evidence.mjs",
+            "archify/renderers/shared/repository-location.mjs",
+            "archify/renderers/shared/route-quality.mjs",
+            "archify/renderers/shared/sidecar-path.mjs",
+            "archify/renderers/shared/spatial-grid.mjs",
+            "archify/renderers/shared/text-fit.mjs",
+            "archify/renderers/shared/utils.mjs",
+            "archify/renderers/shared/validator.mjs",
+            "archify/renderers/workflow/README.md",
+            "archify/renderers/workflow/render-workflow.mjs",
+            "archify/renderers/workflow/workflow-compiler.mjs",
+            "archify/renderers/workflow/workflow-migration-geometry.mjs",
+            "archify/schemas/README.md",
+            "archify/schemas/architecture.schema.json",
+            "archify/schemas/common.schema.json",
+            "archify/schemas/dataflow.schema.json",
+            "archify/schemas/lifecycle.schema.json",
+            "archify/schemas/sequence.schema.json"
+          ],
+          "dependency_review": "仅核对文件路径与指纹，未执行或逐个审查脚本",
+          "blob_sha": "dc1e94c1d24a6ff7ebc0f64540ff47ef06623922",
+          "commit_sha": "73aaa0696e8f72c232ea710e6fa94fd953f3e773"
+        }
+      }
     }
   },
   "feeds": {
     "https://learn.chatgpt.com/docs/whats-new": {
       "fingerprint": "ec27190487b37575192a4281d580ae66a2bce614a324865d976ecab692bcbe63",
-      "last_success_at": "2026-10-07T18:08:17.718969+00:00"
+      "last_success_at": "2026-10-08T07:10:48.049557+00:00"
     },
     "https://github.com/openai/codex/releases.atom": {
-      "fingerprint": "7451398011fabad6bb87e3c8619efe3a67ecc451bc4107c3ba0ba594720cffb3",
-      "last_success_at": "2026-10-07T18:08:18.656839+00:00"
+      "fingerprint": "5cd12216c5546e1120f9c6f6af29deaaab3d7a552287fbf6b5005f74dc00e8f1",
+      "last_success_at": "2026-10-08T07:10:49.105610+00:00"
     }
   },
-  "discovered_repositories": {},
-  "rotation_cursor": 12
+  "discovered_repositories": {
+    "obra/superpowers": {
+      "name": "obra/superpowers",
+      "priority": 40,
+      "stars": 296492,
+      "verified_public": true
+    },
+    "mattpocock/skills": {
+      "name": "mattpocock/skills",
+      "priority": 40,
+      "stars": 280107,
+      "verified_public": true
+    },
+    "affaan-m/ECC": {
+      "name": "affaan-m/ECC",
+      "priority": 40,
+      "stars": 275091,
+      "verified_public": true
+    },
+    "anthropics/skills": {
+      "name": "anthropics/skills",
+      "priority": 40,
+      "stars": 180092,
+      "verified_public": true
+    },
+    "DietrichGebert/ponytail": {
+      "name": "DietrichGebert/ponytail",
+      "priority": 40,
+      "stars": 157874,
+      "verified_public": true
+    },
+    "Shubhamsaboo/awesome-llm-apps": {
+      "name": "Shubhamsaboo/awesome-llm-apps",
+      "priority": 40,
+      "stars": 140958,
+      "verified_public": true
+    },
+    "JuliusBrussee/caveman": {
+      "name": "JuliusBrussee/caveman",
+      "priority": 40,
+      "stars": 110461,
+      "verified_public": true
+    },
+    "addyosmani/agent-skills": {
+      "name": "addyosmani/agent-skills",
+      "priority": 40,
+      "stars": 103026,
+      "verified_public": true
+    },
+    "nexu-io/open-design": {
+      "name": "nexu-io/open-design",
+      "priority": 40,
+      "stars": 99927,
+      "verified_public": true
+    },
+    "tt-a1i/archify": {
+      "name": "tt-a1i/archify",
+      "priority": 40,
+      "stars": 79444,
+      "verified_public": true
+    },
+    "ComposioHQ/awesome-claude-skills": {
+      "name": "ComposioHQ/awesome-claude-skills",
+      "priority": 40,
+      "stars": 76689,
+      "verified_public": true
+    },
+    "career-ops-hq/career-ops": {
+      "name": "career-ops-hq/career-ops",
+      "priority": 40,
+      "stars": 73744,
+      "verified_public": true
+    },
+    "public-apis/public-apis": {
+      "name": "public-apis/public-apis",
+      "priority": 40,
+      "stars": 486839,
+      "verified_public": true
+    },
+    "openclaw/openclaw": {
+      "name": "openclaw/openclaw",
+      "priority": 40,
+      "stars": 391624,
+      "verified_public": true
+    },
+    "ultraworkers/claw-code": {
+      "name": "ultraworkers/claw-code",
+      "priority": 40,
+      "stars": 195196,
+      "verified_public": true
+    },
+    "avelino/awesome-go": {
+      "name": "avelino/awesome-go",
+      "priority": 40,
+      "stars": 187455,
+      "verified_public": true
+    },
+    "msitarzewski/agency-agents": {
+      "name": "msitarzewski/agency-agents",
+      "priority": 40,
+      "stars": 158361,
+      "verified_public": true
+    },
+    "farion1231/cc-switch": {
+      "name": "farion1231/cc-switch",
+      "priority": 40,
+      "stars": 141180,
+      "verified_public": true
+    },
+    "ripienaar/free-for-dev": {
+      "name": "ripienaar/free-for-dev",
+      "priority": 40,
+      "stars": 139372,
+      "verified_public": true
+    }
+  },
+  "rotation_cursor": 20
 }

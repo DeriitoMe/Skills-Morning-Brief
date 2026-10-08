@@ -19,11 +19,12 @@ def refresh_all(root=ROOT, store=None, personal=True):
             record = {"started_at": started, "completed_at": now_iso(), "status": "failed", "error_type": type(exc).__name__}
             _record_run(root, record)
             raise
-        failures = any(row.get("status") == "failed" for row in result["sources"] + result["news_sources"])
+        failures = any(row.get("status") == "failed" for row in result["sources"] + result["news_sources"] + result.get("tibo_sources", []))
         record = {"started_at": started, "completed_at": now_iso(),
                   "status": "degraded" if failures or result["public_editor"] == "pending" else "ok",
                   "sources": result["sources"], "news_sources": result["news_sources"], "requests": result["requests"],
                   "public_editor": result["public_editor"], "public_news": result["public_news"],
+                  "tibo": result.get("tibo", {}), "tibo_sources": result.get("tibo_sources", []),
                   "personal_workspaces_processed": len(result["workspaces"])}
         _record_run(root, record)
         return {**result, "status": record["status"], "completed_at": record["completed_at"]}
@@ -54,6 +55,8 @@ def _refresh_all(root=ROOT, store=None, personal=True):
         neutral_status = "pending"
     from .public_news import refresh_public_news
     public_news = refresh_public_news(root)
+    from .tibo_watch import refresh_tibo
+    tibo = refresh_tibo(root)
     results = []
     for profile in store.list_workspaces() if personal else []:
         if profile.get("automatic_recommendations") is not True:
@@ -67,4 +70,6 @@ def _refresh_all(root=ROOT, store=None, personal=True):
         except (RuntimeError, ValueError, OSError) as exc:
             results.append({"name": profile["name"], "status": "failed", "detail": str(exc)[:300]})
     return {"sources": statuses, "requests": requests, "public_editor": neutral_status, "public_news": len(public_news["items"]),
-            "news_sources": public_news.get("sources", []), "workspaces": results}
+            "news_sources": public_news.get("sources", []), "workspaces": results,
+            "tibo": {key: tibo[key] for key in ("status", "new_count", "updated_count", "verified_count", "pending_count")},
+            "tibo_sources": tibo["sources"]}

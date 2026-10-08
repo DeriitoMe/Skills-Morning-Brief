@@ -23,3 +23,4 @@ if ($legacy -and $legacy.Actions.Arguments.Contains($runnerPath)) {
 }
 Get-ScheduledTask -TaskName $name | Select-Object TaskName,State
 Get-ScheduledTaskInfo -TaskName $name | Select-Object NextRunTime,LastTaskResult
+& (Join-Path $PSScriptRoot 'setup-tibo-schedule.ps1') -PythonPath $PythonPath

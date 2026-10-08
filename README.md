@@ -6,7 +6,7 @@ Skills Morning Brief tracks popular AI skills on GitHub and brings together usef
 
 ## 开始使用
 
-下载 [v1.0.0 本地安装包](https://github.com/DeriitoMe/Skills-Morning-Brief/releases/tag/v1.0.0) 并解压。需要 Python 3.11+，应用只依赖 Python 标准库。
+下载 [最新本地安装包](https://github.com/DeriitoMe/Skills-Morning-Brief/releases) 并解压。需要 Python 3.11+，应用只依赖 Python 标准库。
 
 - Windows：双击 `Open-Skills-Morning-Brief.cmd`。
 - macOS / Linux：运行 `sh open-skills-morning-brief.sh`。
@@ -18,7 +18,7 @@ Skills Morning Brief tracks popular AI skills on GitHub and brings together usef
 
 ## 监测与更新
 
-首页、热门 Skills、近期增长、AI / Agent 动态直接开放。Stars 是仓库级数据；增长显示两次真实采样的实际窗口，积累不足完整 7 天时不估算周增幅。
+首页、热门 Skills、近期增长、AI / Agent 动态和「tibo监视」直接开放。Stars 是仓库级数据；增长显示两次真实采样的实际窗口，积累不足完整 7 天时不估算周增幅。
 
 默认关注 OpenAI、Anthropic、Trail of Bits、Superpowers、Vercel 和 GitHub 的公共 Skills 来源，并按预算轮换发现更多仓库。官方资讯来源包括 OpenAI、Codex、Claude Code 和 DeepSeek。预发布版本与无日期更新分别标注。
 
@@ -39,6 +39,14 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/setup-schedule.p
 定时任务在 `.runtime/monitor-runs/` 写入每轮结果，最新记录在 `.runtime/latest-monitor.json`，包括来源检查时间、状态、请求数和摘要数量。Windows 任务的退出码用于判断任务执行是否完成；记录中的 `degraded` 表示部分来源或模型失败，需结合记录判断内容是否完整。
 
 更新结果显示在本机网页。本版本不配置邮件、Slack 或手机通知，也不会自动将每次监测结果提交到 GitHub。持续在线服务与云端调度需要另外部署。
+
+## tibo监视
+
+专门整理 ChatGPT / Codex 的额度刷新、补发与可储存重置消息。每条展示原帖或官方链接、发布日期、采集时间、适用范围、重置方式及待确认事项。镜像只发现链接，原文通过 X 官方发布接口核对；不把二手转述、发帖时间或相对时区猜测当成固定重置时刻。
+
+本机每天 08:30 与 20:30 核对，两次间隔 12 小时。早间任务包含全部 Skills，晚间任务只检查额度消息。上述调度设置脚本会同时注册两项任务。可运行 `python -m morningpaper tibo-monitor` 单独更新专栏。访问失败或覆盖不完整时会标明并保留上次结果。
+
+当前公开渠道是有界发现，不保证完整 X 时间线；X API 可从本机环境变量读取自己的令牌。完整范围、消息去重与失败处理见 [专栏说明](docs/tibo-monitor.md)。
 
 ## 可选个人推荐
 
@@ -72,7 +80,7 @@ DeepSeek Key 可放在 `DEEPSEEK_API_KEY` 环境变量。GitHub 采集优先使�
 python -m unittest discover -s tests -v
 python scripts/export-public-seeds.py
 python scripts/build-package.py
-python scripts/audit-release.py --staged --history --zip dist/Skills-Morning-Brief-1.0.0.zip
+python scripts/audit-release.py --staged --history --zip dist/Skills-Morning-Brief-1.1.0.zip
 ```
 
 公开 seeds 更新必须再次审核。发布包含本地 ZIP 与 SHA-256 校验文件；GitHub 源码与 ZIP 均可启动。

@@ -1,40 +1,52 @@
 {
-  "updated_at": "2026-10-07T18:08:44.455185+00:00",
+  "updated_at": "2026-10-08T07:11:07.093128+00:00",
   "items": [
     {
-      "id": "b08e03422c92382850503a4e8ac85067ff73844d0acd66204ee2d399db4443ff",
-      "title": "Codex 0.161.0：GPT-6.1 Sol 成为默许模型，新增 /mcp login 与 Daybreak 显式开关",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0",
-      "published_at": "2026-10-07T16:01:20Z",
-      "fingerprint": "e17882791e2bbac16e5eec6234217febc31e69488eb3af2ef27a900bda39be11",
+      "id": "75357ef10058c1e9e7b6cbe5e5f68ff84adb8cbcc0cdc38069dd524a8cb30534",
+      "title": "Codex 发布 rust-v0.162.0-alpha.17.2 预发布版本",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.17.2",
+      "published_at": "2026-10-08T06:23:40Z",
+      "fingerprint": "2a7d605fbbf5b0a896a830d94bcaaae2d672d50efa8ffaa38ab898a9bfbf1801",
       "source": "Codex 发布",
-      "collected_at": "2026-10-07T17:57:22.388046+00:00",
-      "summary": "Codex 0.161.0 将 GPT-6.1 Sol 设为捆绑与 Amazon Bedrock 目录中的默认模型，并支持从活动终端会话以 /mcp login <name> 登录 MCP 服务器。该版本还将 Daybreak 改为需通过 --enable cli_daybreak 或 features.cli_daybreak=true 显式启用，单独设置 daybreak=true 不再生效，相关控件与 /daybreak 命令默认隐藏。",
-      "impact": "使用 Codex 的 Agent 需要按新方式登录 MCP 服务器，并注意 Daybreak 路由必须显式开启，此前仅靠 daybreak=true 的配置将不再生效。",
+      "collected_at": "2026-10-08T07:11:02.930710+00:00",
+      "summary": "Codex 的 rust-v0.162.0-alpha.17.2 已作为 alpha 预发布版本发布。该版本仍处于测试阶段，官方发布说明未列出具体变更细节。",
+      "impact": "使用 Codex 的开发者需注意该版本为测试版，是否升级应按自身对稳定性的要求判断。",
       "edit_status": "ai_reviewed"
     },
     {
-      "id": "9a498f821d27e63f330e43aff13571cce945a55d7cbadc746827ccf67ebbde14",
-      "title": "Codex 发布 0.162.0-alpha.18 预发布版本",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.18",
-      "published_at": "2026-10-07T02:16:44Z",
-      "fingerprint": "3044a6899129cd261e98c58cb104531fbade3298b1f116a4dbbf9d5a77186acd",
-      "source": "Codex 发布",
-      "collected_at": "2026-10-07T17:57:22.387952+00:00",
-      "summary": "Codex 发布了预发布版本 0.162.0-alpha.18，发布说明中未包含更多变更细节。",
-      "impact": "面向测试环境的 Codex 用户可关注该预发布版本，但正式版功能仍以稳定版本说明为准。",
-      "edit_status": "ai_reviewed"
-    },
-    {
-      "id": "0c734930a759f57abefcec696723246934c09ac4151d703b2a2f7b757bcec242",
-      "title": "Claude Code v2.1.292：Agent 工具新增 effort 参数，插件安装支持 --marketplace",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292",
-      "published_at": "2026-10-06T18:59:30Z",
-      "fingerprint": "2c4076824e9e8475c540c28d196786abddc5b3c33fc0cf1c6841fef9dd5036e0",
+      "id": "0dfdf17053d5d17a51ef3e6e55a0bc9bbd7a459aa802325d2e25efcf67e04497",
+      "title": "Claude Code v2.1.294 修复 prompt 与 agent 钩子的拦截行为",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
+      "published_at": "2026-10-08T05:03:54Z",
+      "fingerprint": "15a8ab55928887dc6b47f5a46049a7398a854d9cda7536d8b7ffc83147ec3747",
       "source": "Claude Code 发布",
-      "collected_at": "2026-10-07T17:57:23.287460+00:00",
-      "summary": "Claude Code v2.1.292 为 Agent 工具加入 effort 参数，可让 Claude 以指定强度运行子代理；同时为 claude plugin install 增加 --marketplace <source>，按与 claude plugin marketplace add 相同的策略检查后从该来源安装插件。此版本还修复了技能或斜杠命令的 allowed-tools 规则在中途退出 auto 或 plan 模式后于后续轮次重新生效等问题。",
-      "impact": "配置子代理与插件来源时可用新的 effort 参数和 --marketplace 选项，同时依赖 allowed-tools 限制的 Skill 行为在退出自动或计划模式后更符合预期。",
+      "collected_at": "2026-10-08T07:11:03.860350+00:00",
+      "summary": "Claude Code v2.1.294 修复了以指令形式编写的 prompt 与 agent 钩子（如“Block commands that...”）会放行本应拦截内容的问题。同时改进了 Stop 和 SubagentStop 上以指令形式编写的 prompt 钩子（如“Carry on if the build is broken”）的判定方式，使 Claude 更不容易提前停止。",
+      "impact": "依赖钩子指令控制命令拦截或多轮代理停止时机的用户，升级后行为更符合预期。",
+      "edit_status": "ai_reviewed"
+    },
+    {
+      "id": "5debdd19ae6c23c4ee8d59e91a28453ddf8b3a7795396d5098bd09fc9c2f4bb5",
+      "title": "Codex 发布 0.162.0-alpha.18.1 预发布版本",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0-alpha.18.1",
+      "published_at": "2026-10-08T02:58:48Z",
+      "fingerprint": "7ff014ba6c724f729b2f0c8a5b3b9d7d2b85849374a7bca524869f1182b8e090",
+      "source": "Codex 发布",
+      "collected_at": "2026-10-08T07:11:02.930707+00:00",
+      "summary": "Codex 的 0.162.0-alpha.18.1 已作为 alpha 预发布版本发布。该版本仍处于测试阶段，官方发布说明未列出具体变更细节。",
+      "impact": "使用 Codex 的开发者需注意该版本为测试版，是否升级应按自身对稳定性的要求判断。",
+      "edit_status": "ai_reviewed"
+    },
+    {
+      "id": "0ba886b07133e21ddbd6c0029c502b74edc3420d21331506de6e754a3346c5f9",
+      "title": "Claude Code v2.1.293 发布，新增 Claude Haiku 5.5 默认模型与多项 Agent、Skills 修复",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293",
+      "published_at": "2026-10-07T18:10:20Z",
+      "fingerprint": "fa623508fed0bc63feb4624470546ff764dd25546d88e9ae5a3b0d2f97a8df75",
+      "source": "Claude Code 发布",
+      "collected_at": "2026-10-08T00:30:56.683851+00:00",
+      "summary": "Claude Code v2.1.293 新增 Claude Haiku 5.5（claude-haiku-5-5），成为 Anthropic API 上的默认 Haiku 模型，具备 1M 上下文，价格按 $0.10/$0.50 每百万 token 计（超过 100K 的提示为 $0.50/$2.50）。同时为 subagentStatusLine 载荷增加 agentType、为 $.tool.register 增加 isDeferred，并修复了技能描述同步、子代理工具提示、自定义代理显示等多项问题。",
+      "impact": "使用子代理、自定义代理与 claude.ai 同步技能的用户可借此版本获得更可靠的状态识别与工具注册控制，并修复技能描述未及时生效的问题。",
       "edit_status": "ai_reviewed"
     },
     {
@@ -47,18 +59,6 @@
       "collected_at": "2026-10-06T08:38:05.400157+00:00",
       "summary": "OpenAI 官方动态汇总 DevDay 2026 发布内容，包括可跨对话持续推进任务的 dots、Codex 与 Work 的 Astra Ultrafast 加速模式、可复用的 Codex Cloud 环境、处于 research preview 的 Codex Security Cloud，以及 GPT-6.1 Sol、Plugin Extensions、MCP Events 等接口能力。同期页面还记录了 9 月 21–25 日 GPT-6 Sol 与 GPT-6 Luna 在 Codex 的推出，以及 GPT-5.5 将于 2026 年 10 月 14 日在 ChatGPT、ChatGPT Work 和 Codex 退役的说明。",
       "impact": "Agent 与插件生态的接口（扩展、MCP 事件、安全扫描、云环境复用）明显增多，使用 Agent 或 Skills 的团队需要关注 dots 的逐步开放范围与 GPT-5.5 退役带来的设置迁移。",
-      "edit_status": "ai_reviewed"
-    },
-    {
-      "id": "bb63a15b856259f7a6bec5b10db6fa60dd2a0645c9d76e1491e9f4487ff28598",
-      "title": "Claude Code v2.1.291 修复两处回归问题",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.291",
-      "published_at": "2026-10-06T03:55:19Z",
-      "fingerprint": "13f399e2bf7b35dc3c854f370c65b93c14a23b3b9c1e1779639a2b4e3d74848e",
-      "source": "Claude Code 发布",
-      "collected_at": "2026-10-06T08:38:06.917883+00:00",
-      "summary": "该版本修复了 2.1.290 中云会话可能丢失权限提示回复的回归，以及 2.1.288 中退出会话时最后几条消息可能丢失的回归。",
-      "impact": "对依赖云会话和权限审批流程使用 Agent 的用户，升级可避免提示回复与会话尾部消息丢失。",
       "edit_status": "ai_reviewed"
     },
     {
@@ -93,25 +93,31 @@
       "source": "OpenAI 官方动态",
       "status": "ok",
       "detail": "已检查官方来源",
-      "checked_at": "2026-10-07T18:08:43.044108+00:00"
+      "checked_at": "2026-10-08T07:11:02.629380+00:00"
     },
     {
       "source": "Codex 发布",
       "status": "ok",
       "detail": "已检查官方来源",
-      "checked_at": "2026-10-07T18:08:43.342306+00:00"
+      "checked_at": "2026-10-08T07:11:02.930713+00:00"
     },
     {
       "source": "Claude Code 发布",
       "status": "ok",
       "detail": "已检查官方来源",
-      "checked_at": "2026-10-07T18:08:44.035630+00:00"
+      "checked_at": "2026-10-08T07:11:03.860626+00:00"
     },
     {
       "source": "DeepSeek 官方更新",
       "status": "ok",
       "detail": "已读取带日期的官方更新",
-      "checked_at": "2026-10-07T18:08:44.455151+00:00"
+      "checked_at": "2026-10-08T07:11:04.394516+00:00"
+    },
+    {
+      "source": "公共资讯编辑",
+      "status": "ok",
+      "detail": "只使用公开原文，未输入私人画像",
+      "checked_at": "2026-10-08T07:11:07.093111+00:00"
     }
   ]
 }

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-08T10:28:49.925074+00:00",
+  "last_success_at": "2026-10-08T10:28:49.925078+00:00",
+  "status": "partial",
+  "coverage": "每天 08:30 / 20:30 核对（上海时间）；公开发现不保证完整时间线。最近最多 20 个链接，本轮最多 8 条原发布接口核验。发帖时间只到日期时明确标注，绝不当作重置发生时间。",
+  "new_count": 0,
+  "updated_count": 0,
+  "candidate_count": 20,
+  "verified_count": 8,
+  "pending_count": 0,
+  "items": [
+    {
+      "scope": "原文称付费账户，未逐项列出计划",
+      "fingerprint": "3de2de750eada2c044c04d2e3515bd076fdd899d9f916d554cd06f807ecdb1f6",
+      "url": "https://x.com/thsottiaux/status/2107913674593644711",
+      "published_at": "2026-10-07",
+      "source_truncated": false,
+      "event_status": "in_progress",
+      "reset_time_text": "原文未给出确切重置时刻",
+      "summary": "原帖提到补发可储存的额度重置。原文描述正在补发，尚不能据此确认每个账户到账。",
+      "id": "x:2107913674593644711",
+      "mechanism": "banked_reset",
+      "collected_at": "2026-10-08T06:51:57.766306+00:00",
+      "verification": "source_verified",
+      "reset_at": null,
+      "source": "Tibo @thsottiaux",
+      "excerpt": "Loading a banked reset in everyone's paid accounts. See you again tomorrow!",
+      "uncertainties": [
+        "发帖时间与额度重置发生时间分别记录",
+        "公告不证明某个具体账户已到账，账户状态以官方用量页为准"
+      ],
+      "title": "Tibo：可储存的额度重置补发",
+      "time_note": "仅保留来源明确写出的时间；没有统一固定重置时刻的推断",
+      "date_precision": "day",
+      "mechanism_label": "额度补发 / 可储存重置",
+      "facts": [
+        "原帖提到补发可储存的额度重置。原文描述正在补发，尚不能据此确认每个账户到账。"
+      ],
+      "last_verified_at": "2026-10-08T10:28:41.562383+00:00",
+      "content_key": "574072ff138509e256a6bffeb01a388dc496f5a8401915ece7b9c883b670795c"
+    },
+    {
+      "scope": "历史上线说明：Plus / Pro，活动资格以当时规则为准",
+      "fingerprint": "4448e83a628e90b52e1d848ef27059c07f30b1a2c9a5b69d7a37d8b8408d2449",
+      "url": "https://learn.chatgpt.com/docs/changelog",
+      "published_at": "2026-06-11",
+      "event_status": "documented",
+      "reset_time_text": "功能上线日期，不是统一账户重置时刻",
+      "summary": "历史上线说明介绍 Plus、Pro 的可储存额度重置。上线时的赠送和邀请活动有各自条件，不代表今天所有账户再次补发。",
+      "id": "official:banking:2026-06-11",
+      "mechanism": "mechanism_update",
+      "collected_at": "2026-10-08T06:52:01.564970+00:00",
+      "verification": "official_verified",
+      "reset_at": null,
+      "source": "OpenAI 官方更新",
+      "uncertainties": [
+        "当前账户是否持有可用重置，以官方用量页为准"
+      ],
+      "title": "官方说明：可储存的额度重置上线",
+      "date_precision": "day",
+      "mechanism_label": "重置方式说明",
+      "facts": [
+        "支持储存额度重置"
+      ],
+      "last_verified_at": "2026-10-08T06:52:01.564980+00:00",
+      "content_key": "4c6e3e45081f186e44092d43feaa9a8d056e3295f8493ccb3f5d547ae6e61d36"
+    }
+  ],
+  "references": [
+    {
+      "scope": "具体账户的当前限制",
+      "url": "https://learn.chatgpt.com/docs/pricing",
+      "published_at": null,
+      "summary": "官方说明建议查看用量页中的当前限制和重置时间。本专栏记录公共公告，不读取你的账户额度。",
+      "id": "reference:pricing",
+      "collected_at": "2026-10-08T10:28:48.699321+00:00",
+      "verification": "official_verified",
+      "source": "OpenAI 官方定价与用量说明",
+      "title": "个人重置时间以官方用量页为准",
+      "date_precision": "undated",
+      "mechanism_label": "常规额度窗口",
+      "last_verified_at": "2026-10-08T10:28:48.699337+00:00"
+    },
+    {
+      "scope": "有可用重置且有合格额度窗口的账户",
+      "url": "https://learn.chatgpt.com/docs/app-server",
+      "published_at": null,
+      "summary": "官方说明区分已兑换、没有可用重置和没有可重置窗口等状态。兑换后应重新查看账户限制。本网站只提供信息，不替你消费重置。",
+      "id": "reference:banking",
+      "collected_at": "2026-10-08T10:28:49.924708+00:00",
+      "verification": "official_verified",
+      "source": "OpenAI 官方重置说明",
+      "title": "可用的储存重置需要手动使用",
+      "date_precision": "undated",
+      "mechanism_label": "可储存 / 手动重置",
+      "last_verified_at": "2026-10-08T10:28:49.924723+00:00"
+    }
+  ],
+  "sources": [
+    {
+      "detail": "使用公开发现和原发布接口，完整时间线尚未启用",
+      "source": "X 官方时间线",
+      "status": "not_configured",
+      "url": "https://x.com/thsottiaux",
+      "checked_at": "2026-10-08T10:28:36.952326+00:00"
+    },
+    {
+      "detail": "仅发现原帖链接；镜像正文和时间不作为发布证据",
+      "source": "公开 RSS 发现",
+      "status": "ok",
+      "url": "https://x.noodl3.net/thsottiaux/rss",
+      "checked_at": "2026-10-08T10:28:37.976424+00:00"
+    },
+    {
+      "detail": "仅发现原帖链接；镜像正文和时间不作为发布证据",
+      "source": "公开页面发现",
+      "status": "ok",
+      "url": "https://twiscan.com/en/x/thsottiaux",
+      "checked_at": "2026-10-08T10:28:40.713610+00:00"
+    },
+    {
+      "detail": "已核对 8 条原帖；失败 0 条；截断或含糊正文不作完整结论",
+      "source": "X 原发布接口核验",
+      "status": "partial",
+      "url": "https://x.com/thsottiaux",
+      "checked_at": "2026-10-08T10:28:47.321778+00:00"
+    },
+    {
+      "detail": "官方原文暂不可读或结构发生变化，保留之前的核对记录",
+      "source": "官方额度说明：changelog",
+      "status": "failed",
+      "url": "https://learn.chatgpt.com/docs/changelog",
+      "checked_at": "2026-10-08T10:28:48.036935+00:00"
+    },
+    {
+      "detail": "已读取官方原文",
+      "source": "官方额度说明：pricing",
+      "status": "ok",
+      "url": "https://learn.chatgpt.com/docs/pricing",
+      "checked_at": "2026-10-08T10:28:48.699344+00:00"
+    },
+    {
+      "detail": "已读取官方原文",
+      "source": "官方额度说明：resets",
+      "status": "ok",
+      "url": "https://learn.chatgpt.com/docs/app-server",
+      "checked_at": "2026-10-08T10:28:49.924731+00:00"
+    }
+  ]
+}

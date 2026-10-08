@@ -31,15 +31,18 @@ def prepare_catalog(root=ROOT, public_state=None):
         destination = root / "data/public" / (name + ".json")
         if seed and not destination.exists():
             write_json(destination, clean(seed))
-    for name in ("collection", "news"):
+    for name in ("collection", "news", "tibo"):
         seed = read_json(root / "seeds" / (name + ".json"))
         destination = root / "data/public" / (name + ".json")
         if seed and not destination.exists():
             if name == "collection":
                 seed = public_checkpoint(seed)
-            else:
+            elif name == "news":
                 from .public_news import news_public
                 seed = news_public(seed)
+            else:
+                from .tibo_watch import tibo_public
+                seed = tibo_public(seed)
             write_json(destination, seed)
     state = public_state if public_state is not None else read_json(root / "data/public/collection.json") or read_json(root / "data/state.json", {})
     path = root / "data/public/catalog.json"

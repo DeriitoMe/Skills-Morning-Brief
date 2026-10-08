@@ -20,4 +20,4 @@ jobs:
       - name: Build and audit the local distribution
         run: |
           python scripts/build-package.py
-          python scripts/audit-release.py --staged --history --zip dist/Skills-Morning-Brief-1.0.0.zip
+          python scripts/audit-release.py --staged --history --zip dist/Skills-Morning-Brief-1.1.0.zip

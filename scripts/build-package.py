@@ -12,11 +12,12 @@ sys.path.insert(0, str(root))
 from morningpaper.catalog import catalog_public, public_checkpoint
 from morningpaper.core import read_json
 from morningpaper.public_news import news_public
+from morningpaper.tibo_watch import tibo_public
 
 
 def source_files(project=root):
     base = ["README.md", "VERSION", ".gitignore", ".gitattributes", "config.toml", "Open-Skills-Morning-Brief.cmd", "open-skills-morning-brief.sh", ".github/workflows/ci.yml", "web/vendor/manifest.json",
-            "docs/SECURITY.md", "docs/release-v1.md", "profile/inventory-sources.example.json",
+            "docs/SECURITY.md", "docs/release-v1.md", "docs/tibo-monitor.md", "profile/inventory-sources.example.json",
             ".agents/skills/agent-morning-paper/SKILL.md", ".agents/skills/agent-morning-paper/agents/openai.yaml"]
     files = [project / name for name in base if (project / name).is_file()]
     for folder, suffixes in (("morningpaper", {".py"}), ("tests", {".py"}), ("scripts", {".py", ".ps1"}), ("web", {".html", ".css", ".js"})):
@@ -38,14 +39,15 @@ def build(project=root):
     for repo in collection["repositories"].values():
         for row in repo.get("candidates", {}).values(): row.pop("source_text", None)
     news = news_public(read_json(project / "seeds/news.json", {}))
+    tibo = tibo_public(read_json(project / "seeds/tibo.json", {}))
     with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED) as archive:
         for path in source_files(project): archive.write(path, prefix + path.relative_to(project).as_posix())
-        for name, value in (("catalog", catalog), ("collection", collection), ("news", news)):
+        for name, value in (("catalog", catalog), ("collection", collection), ("news", news), ("tibo", tibo)):
             archive.writestr(prefix + "data/public/" + name + ".json", json.dumps(value, ensure_ascii=False))
     digest = hashlib.sha256(destination.read_bytes()).hexdigest()
     checksum = destination.with_suffix(".zip.sha256")
     checksum.write_text(digest + "  " + destination.name + "\n", encoding="ascii")
-    print(json.dumps({"package": destination.name, "bytes": destination.stat().st_size, "sha256": digest, "files": len(source_files(project)) + 3}))
+    print(json.dumps({"package": destination.name, "bytes": destination.stat().st_size, "sha256": digest, "files": len(source_files(project)) + 4}))
     return destination
 
 

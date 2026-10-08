@@ -38,7 +38,7 @@ class PublicMonitorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);(root/"config.toml").write_text((ROOT/"config.toml").read_text(encoding="utf-8"),encoding="utf-8")
             store=PrivateStore(root/"private")
-            with patch("morningpaper.shelf_daily.collect",return_value=([],[],[],0)),patch("morningpaper.shelf_daily.evaluate_catalog") as neutral,patch("morningpaper.public_news.refresh_public_news",return_value={"items":[{"id":"public-news"}]}),patch("morningpaper.shelf_daily.generate_personal") as personal:
+            with patch("morningpaper.tibo_watch.refresh_tibo",return_value={"status":"partial","new_count":0,"updated_count":0,"verified_count":0,"pending_count":0,"sources":[]}), patch("morningpaper.shelf_daily.collect",return_value=([],[],[],0)),patch("morningpaper.shelf_daily.evaluate_catalog") as neutral,patch("morningpaper.public_news.refresh_public_news",return_value={"items":[{"id":"public-news"}]}),patch("morningpaper.shelf_daily.generate_personal") as personal:
                 result=refresh_all(root,store)
             neutral.assert_called_once();personal.assert_not_called()
             self.assertEqual(result["public_news"],1);self.assertEqual(result["workspaces"],[])
@@ -48,6 +48,6 @@ class PublicMonitorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);(root/"config.toml").write_text((ROOT/"config.toml").read_text(encoding="utf-8"),encoding="utf-8")
             store=PrivateStore(root/"private");store.create_workspace({"name":"optional","goals":"work"})
-            with patch("morningpaper.shelf_daily.collect",return_value=([],[],[],0)),patch("morningpaper.shelf_daily.evaluate_catalog"),patch("morningpaper.public_news.refresh_public_news",return_value={"items":[]}),patch("morningpaper.shelf_daily.generate_personal") as personal:
+            with patch("morningpaper.tibo_watch.refresh_tibo",return_value={"status":"partial","new_count":0,"updated_count":0,"verified_count":0,"pending_count":0,"sources":[]}), patch("morningpaper.shelf_daily.collect",return_value=([],[],[],0)),patch("morningpaper.shelf_daily.evaluate_catalog"),patch("morningpaper.public_news.refresh_public_news",return_value={"items":[]}),patch("morningpaper.shelf_daily.generate_personal") as personal:
                 result=refresh_all(root,store)
             personal.assert_not_called();self.assertEqual(result["workspaces"],[])

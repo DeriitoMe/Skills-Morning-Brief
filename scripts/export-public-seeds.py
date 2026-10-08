@@ -9,6 +9,7 @@ sys.path.insert(0, str(root))
 from morningpaper.catalog import catalog_public, public_checkpoint
 from morningpaper.core import read_json, write_json
 from morningpaper.public_news import news_public
+from morningpaper.tibo_watch import tibo_public
 
 
 def export_seeds(project=root):
@@ -18,7 +19,8 @@ def export_seeds(project=root):
         for candidate in repo.get("candidates", {}).values():
             candidate.pop("source_text", None)
     news = news_public(read_json(project / "data/public/news.json", {}))
-    for name, value in (("catalog", catalog), ("collection", collection), ("news", news)):
+    tibo = tibo_public(read_json(project / "data/public/tibo.json", {}))
+    for name, value in (("catalog", catalog), ("collection", collection), ("news", news), ("tibo", tibo)):
         write_json(project / "seeds" / (name + ".json"), value)
     return len(catalog["items"])
 

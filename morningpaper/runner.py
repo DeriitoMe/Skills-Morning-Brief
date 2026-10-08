@@ -225,6 +225,7 @@ def main():
     sub.add_parser("open")
     sub.add_parser("refresh")
     sub.add_parser("monitor")
+    sub.add_parser("tibo-monitor")
     neutral = sub.add_parser("catalog")
     neutral.add_argument("--provider", choices=["codex", "deepseek"], default="codex")
     neutral.add_argument("--limit", type=int, default=80)
@@ -273,6 +274,15 @@ def main():
             board = generate_personal(PrivateStore(), args.workspace_id, limit=args.limit,
                                       progress=lambda done, total: print(str(done) + "/" + str(total), flush=True))
             print(json.dumps({"personal": len(board["personal"]), "reviewed": board["reviewed_count"]}, ensure_ascii=False))
+        elif args.command == "tibo-monitor":
+            from .tibo_watch import refresh_tibo
+            with run_lock(ROOT):
+                result = refresh_tibo()
+                record = {"completed_at": now_iso(), "status": result["status"], "new_count": result["new_count"],
+                          "updated_count": result["updated_count"], "verified_count": result["verified_count"], "pending_count": result["pending_count"], "sources": result["sources"]}
+                write_json(ROOT / ".runtime/latest-tibo-monitor.json", record)
+                write_json(ROOT / ".runtime/tibo-runs" / (record["completed_at"].replace(":", "-") + ".json"), record)
+            print(json.dumps(record, ensure_ascii=False))
         elif args.command in ("refresh", "monitor"):
             from .shelf_daily import refresh_all
             print(json.dumps(refresh_all(personal=args.command == "refresh"), ensure_ascii=False))

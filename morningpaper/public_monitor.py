@@ -97,8 +97,10 @@ def public_home(root=ROOT):
             remainder.append(row)
     growth = growth_rows(state)
     news = news_public(read_json(root / "data/public/news.json", {}))
+    from .tibo_watch import tibo_public
+    tibo = tibo_public(read_json(root / "data/public/tibo.json", {}))
     checked = [row.get("stars_captured_at", "") for row in state.get("repositories", {}).values()] + [row.get("checked_at", "") for row in news.get("sources", [])]
     return {"schema_version": 1, "updated_at": max(checked) if any(checked) else catalog.get("updated_at", now_iso()),
-            "featured": featured[:6], "skills": featured + remainder, "growth": growth, "news": news.get("items", []),
+            "featured": featured[:6], "skills": featured + remainder, "growth": growth, "news": news.get("items", []), "tibo": tibo,
             "repositories": catalog.get("repositories", []), "skill_count": len(skills), "repository_count": len(catalog.get("repositories", [])),
             "monitor_status": news.get("sources", []), "growth_note": "增长来自两次真实采样，显示实际采样窗口；尚未积累完整 7 天时不估算周增长。"}

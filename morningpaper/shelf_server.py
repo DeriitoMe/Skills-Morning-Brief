@@ -142,7 +142,9 @@ def make_shelf_handler(service, port):
                 return
             path = urlparse(self.path).path
             if path == "/api/instance":
-                return self.send(200, {"instance_id": service.store.instance_id, "project_id": fingerprint(str(service.project.resolve())), "version": "1.0.0"})
+                version_file = service.project / "VERSION"
+                return self.send(200, {"instance_id": service.store.instance_id, "project_id": fingerprint(str(service.project.resolve())),
+                                       "version": version_file.read_text(encoding="utf-8").strip() if version_file.exists() else "unknown"})
             files = {"/": ("index.html", "text/html; charset=utf-8"), "/app.js": ("app.js", "text/javascript; charset=utf-8"),
                      "/onboarding.js": ("onboarding.js", "text/javascript; charset=utf-8"), "/onboarding.css": ("onboarding.css", "text/css; charset=utf-8"),
                      "/home.css": ("home.css", "text/css; charset=utf-8"),
@@ -156,6 +158,9 @@ def make_shelf_handler(service, port):
             if path == "/api/public/home":
                 from .public_monitor import public_home
                 return self.send(200, public_home(service.project))
+            if path == "/api/public/tibo":
+                from .tibo_watch import tibo_public
+                return self.send(200, tibo_public(read_json(service.project / "data/public/tibo.json", {})))
             if path in ("/api/public/catalog", "/api/catalog"):
                 return self.send(200, catalog_public(read_json(service.project / "data/public/catalog.json", {})))
             if not self.authenticated():

@@ -2,7 +2,7 @@
 const state={report:null,board:null,inventory:null,archive:[],feedback:{},token:"",filter:"home",ranking:"personal",query:"",repository:"",limit:10,saved:[],workspaceId:null,bootstrap:null,hub:null,hotSort:"useful"};
 const $=selector=>document.querySelector(selector);
 const escapeHTML=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
-function safeURL(value){try{const u=new URL(value);return u.protocol==="https:"&&["github.com","learn.chatgpt.com","developers.openai.com","agentskills.io","api-docs.deepseek.com"].includes(u.hostname)?u.href:"";}catch{return "";}}
+function safeURL(value){try{const u=new URL(value);return u.protocol==="https:"&&!u.username&&!u.password&&["x.com","twitter.com","github.com","learn.chatgpt.com","developers.openai.com","agentskills.io","api-docs.deepseek.com"].includes(u.hostname)?u.href:"";}catch{return "";}}
 function sourceLink(url,label="查看原文 ↗"){const safe=safeURL(url);return safe?`<a class="source-link" href="${escapeHTML(safe)}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)}</a>`:"";}
 async function getJSON(url){const res=await fetch(url,{headers:state.workspaceId?{"X-Workspace-Id":state.workspaceId}:{}});if(!res.ok)throw new Error(`读取失败 (${res.status})`);return res.json();}
 function toast(text){$("#toast").textContent=text;$("#toast").classList.add("visible");clearTimeout(toast.timer);toast.timer=setTimeout(()=>$("#toast").classList.remove("visible"),2600);}
@@ -11,7 +11,7 @@ function dateLong(value){try{return new Intl.DateTimeFormat("zh-CN",{timeZone:"A
 const relations={new:"新增能力",improvement:"专门流程改进",covered:"已有能力覆盖",uncertain:"增量待核对"};
 const compat={documented:"文档显示可用",adaptation:"需要适配",blocked:"依赖暂不满足",unknown:"兼容性待核对"};
 const difficulty={beginner:"容易开始",intermediate:"需要一些准备",advanced:"需要较多准备"};
-const views={home:"首页精选",hot:"热门 Skills",growth:"近期增长",news:"AI / Agent 动态",personal:"可选个人推荐",all:"我的变化记录",saved:"我的收藏"};
+const views={home:"首页精选",hot:"热门 Skills",growth:"近期增长",news:"AI / Agent 动态",tibo:"tibo监视",personal:"可选个人推荐",all:"我的变化记录",saved:"我的收藏"};
 function matches(row){return (!state.query||[row.name,row.description,row.summary,row.repository,row.reason,row.general_reason,row.use_case,row.title,...(row.tags||[])].join(" ").toLowerCase().includes(state.query))&&(!state.repository||state.filter!=="leaderboard"||row.repository===state.repository);}
 function feedbackButtons(row){const action=state.feedback[row.id]?.action;return `<div class="feedback" data-id="${escapeHTML(row.id)}">${[["interested","感兴趣"],["already_have","已有类似"],["not_relevant","与我无关"]].map(([key,label])=>`<button data-action="${key}" aria-pressed="${action===key}" class="${action===key?"selected":""}">${label}</button>`).join("")}${action?'<button data-action="reset">撤销</button>':""}</div>`;}
 function skill(row,index,section){
@@ -40,7 +40,7 @@ function leaderboard(){
 }
 function motion(){if(!window.gsap||!window.ScrollTrigger||matchMedia("(prefers-reduced-motion: reduce)").matches)return;gsap.registerPlugin(ScrollTrigger);ScrollTrigger.getAll().forEach(x=>x.kill());gsap.set("#progress",{scaleX:0});gsap.to("#progress",{scaleX:1,ease:"none",scrollTrigger:{trigger:"#paper",start:"top top",end:"bottom bottom",scrub:true}});gsap.from(".source-row",{opacity:0,y:6,duration:.35,stagger:.025,ease:"power2.out",scrollTrigger:{trigger:".coverage",start:"top 90%",once:true}});ScrollTrigger.refresh();}
 function render(){
- if(["home","hot","growth","news"].includes(state.filter)){renderPublic();return;}
+ if(["home","hot","growth","news","tibo"].includes(state.filter)){renderPublic();return;}
  const r=state.report,b=state.board,isBoard=state.filter==="personal";
  $("#editor-note").hidden=false;$("#stats").hidden=false;$("#personal-sidebar").hidden=false;
  if(!r&&!b)return;
@@ -92,11 +92,13 @@ async function loadWorkspace(workspaceId){
  if(results[4].status==="fulfilled"){state.board=results[4].value;$("#repo-filter").innerHTML='<option value="">全部技能库</option>'+state.board.repositories.map(row=>`<option value="${escapeHTML(row.name)}">${escapeHTML(row.name)}</option>`).join("");}
  render();document.dispatchEvent(new CustomEvent("skill-shelf-workspace",{detail:workspaceId}));
 }
-function publicMatch(row){return !state.query||[row.name,row.description,row.summary,row.repository,row.title,row.source].join(' ').toLowerCase().includes(state.query);}
+function publicMatch(row){return !state.query||[row.name,row.description,row.summary,row.repository,row.title,row.source,row.scope,row.mechanism_label].join(' ').toLowerCase().includes(state.query);}
 function publicCard(row){return `<article class="skill-card"><div class="card-source">${escapeHTML(row.repository)}</div><h3>${escapeHTML(row.name)}</h3><p class="card-summary">${escapeHTML((row.summary||row.description||'').slice(0,150))}</p><div class="card-meta"><b>仓库 ★ ${Number(row.stars||0).toLocaleString('en-US')}</b>${sourceLink(row.url,'看原文 ↗')}</div><details><summary>了解用途与适配</summary><p>${escapeHTML(row.general_reason||row.description)}</p><p>${escapeHTML(row.host_notes||'可先查看原文中的宿主和依赖说明。')}</p><small>原文核对 ${escapeHTML(dateTime(row.collected_at))}</small></details></article>`;}
 function publicHeading(title,view){return `<div class="home-section-head"><h2>${title}</h2>${view?`<button data-view="${view}">查看全部 ↗</button>`:''}</div>`;}
 function growthHTML(rows){return rows.length?`<div class="growth-table">${rows.map(row=>`<div class="growth-row"><span>${sourceLink(row.url,row.repository)}<small>仓库 ★ ${Number(row.stars).toLocaleString('en-US')}</small></span><b>${row.delta>=0?'+':''}${Number(row.delta).toLocaleString('en-US')}</b><span>采样 ${row.hours} 小时<small>${row.percent>=0?'+':''}${row.percent}% ${row.fast_growth?'· 快速增长':''}</small></span></div>`).join('')}</div>`:'<div class="empty">增长记录正在积累，可以先看热门高星技能。</div>';}
 function publicNewsHTML(rows){return `<div class="home-news">${rows.map(row=>`<article class="public-news-row"><div class="news-time">${escapeHTML(row.published_at?row.published_at.slice(0,10):'官方页面更新')}<br><small>${escapeHTML(row.source)}</small></div><div><h3>${escapeHTML(row.title)}</h3><p>${escapeHTML(row.summary||'官方原文已收录，摘要正在整理。')}</p>${sourceLink(row.url,'查看来源 ↗')}</div></article>`).join('')||'<div class="empty">正在补充经过核对的官方动态。</div>'}</div>`;}
+function tiboItemHTML(row){const conflicts=row.verification==='conflicting';const states={announced:'已宣布，待执行',in_progress:'原文描述补发中',completed:'原文称已完成',unclear:'执行状态待确认',documented:'历史方式说明',not_announced:'本条未宣布重置',proposal:'提问或提议，未宣布',mixed:'多项安排，需看原文'};const day=row.published_at?row.published_at.slice(0,10):'原文没有发布日期';const publication=row.date_precision==='second'?dateTime(row.published_at)+'（上海时间）':day+'（原文仅提供日期）';return `<article class="tibo-entry"><div class="tibo-entry-top"><span>${escapeHTML(row.mechanism_label||'额度重置')}</span><span class="tibo-state">${escapeHTML(conflicts?'来源表述冲突，待确认':states[row.event_status]||'已核对来源')}</span></div><h3>${escapeHTML(row.title)}</h3><p>${escapeHTML(row.summary)}</p><dl class="tibo-fields"><div><dt>重置时间</dt><dd>${escapeHTML(conflicts?'来源互相矛盾，暂不确认':row.reset_time_text||'原文未明确')}</dd></div><div><dt>适用范围</dt><dd>${escapeHTML(row.scope||'原文未明确')}</dd></div><div><dt>消息发布</dt><dd>${escapeHTML(publication)}</dd></div><div><dt>首次采集</dt><dd>${escapeHTML(dateTime(row.collected_at))}（上海时间）</dd></div></dl>${sourceLink(row.url,'查看原帖 / 官方说明 ↗')}<details><summary>核对依据与待确认项</summary><p>来源：${escapeHTML(row.source)}。最近核对 ${escapeHTML(dateTime(row.last_verified_at))}。</p>${row.excerpt?`<blockquote>${escapeHTML(row.excerpt)}</blockquote>`:''}${(row.uncertainties||[]).map(text=>`<p>${escapeHTML(text)}</p>`).join('')}</details></article>`;}
+function tiboHTML(value,preview=false){const t=value||{items:[],references:[],sources:[],status:'not_checked'};const rows=(t.items||[]).filter(publicMatch);const label={ok:'本轮来源核对完成',partial:'覆盖范围有限',unavailable:'来源暂不可核实',not_checked:'尚未执行本专栏监测'}[t.status]||'覆盖范围待核对';const listing=rows.length?rows.slice(0,preview?2:20).map(tiboItemHTML).join(''):'<div class="empty">暂无新的已确认重置消息。来源不可读时，不据此断言今天没有重置。</div>';return `<p class="tibo-intro">只跟踪 ChatGPT / Codex 额度刷新、补发与可储存重置。</p><p class="tibo-health">${escapeHTML(label)} · 核对截至 ${escapeHTML(dateTime(t.updated_at))} · 每天 08:30 / 20:30</p>${listing}${preview?'':`<details class="tibo-coverage"><summary>官方重置说明与本轮覆盖范围</summary><p>${escapeHTML(t.coverage)}</p>${(t.references||[]).map(row=>`<p><b>${escapeHTML(row.title)}</b><br>${escapeHTML(row.summary)} ${sourceLink(row.url,'官方说明 ↗')}</p>`).join('')}${(t.sources||[]).map(row=>`<p>${escapeHTML(row.source)}：${escapeHTML(row.detail)}</p>`).join('')}</details>`}`;}
 function renderPublic(){
  const h=state.hub;if(!h)return;
  $('#editor-note').hidden=true;$('#stats').hidden=true;$('#rank-controls').hidden=true;$('#rank-explanation').hidden=true;$('#health').hidden=true;$('#personal-sidebar').hidden=true;$('#welcome-panel').hidden=true;$('#workspace-panel').hidden=true;$('#session-needed').hidden=true;
@@ -104,7 +106,8 @@ function renderPublic(){
  const skills=(state.filter==='home'&&!state.query?h.featured:h.skills).filter(publicMatch);
  const growth=h.growth.filter(row=>publicMatch({repository:row.repository}));const news=h.news.filter(publicMatch);
  let html='';
- if(state.filter==='home'){html=`<section class="home-section">${publicHeading(state.query?'技能搜索结果':'精选热门 Skills','hot')}<div class="skill-grid">${skills.slice(0,6).map(publicCard).join('')||'<div class="empty">没有匹配的技能。</div>'}</div></section><section class="home-section">${publicHeading('近期增长观察','growth')}${growthHTML(growth.slice(0,3))}</section><section class="home-section">${publicHeading('AI / Agent 动态','news')}${publicNewsHTML(news.slice(0,3))}</section>`;}
+ if(state.filter==='home'){html=`<section class="home-section">${publicHeading(state.query?'技能搜索结果':'精选热门 Skills','hot')}<div class="skill-grid">${skills.slice(0,6).map(publicCard).join('')||'<div class="empty">没有匹配的技能。</div>'}</div></section><section class="home-section">${publicHeading('近期增长观察','growth')}${growthHTML(growth.slice(0,3))}</section><section class="home-section">${publicHeading('AI / Agent 动态','news')}${publicNewsHTML(news.slice(0,3))}</section><section class="home-section">${publicHeading('tibo监视','tibo')}${tiboHTML(h.tibo,true)}</section>`;}
+ if(state.filter==='tibo')html=tiboHTML(h.tibo);
  if(state.filter==='hot'){const sorted=state.hotSort==='stars'?[...skills].sort((a,b)=>b.stars-a.stars):skills;const shown=sorted.slice(0,state.limit);html=`<p class="nav-hint">历史上好用的技能持续保留，直接查看用途和原文。</p><div class="rank-controls"><div class="rank-modes"><button data-hot-sort="useful" class="${state.hotSort==='useful'?'selected':''}">精选实用</button><button data-hot-sort="stars" class="${state.hotSort==='stars'?'selected':''}">仓库 Stars</button></div></div><div class="skill-grid">${shown.map(publicCard).join('')}</div><div class="rank-load"><span>已显示 ${shown.length} / ${sorted.length} 项</span>${shown.length<sorted.length?'<button id="public-load-more">继续浏览</button>':''}</div>`;}
  if(state.filter==='growth')html=`${publicHeading('近期增长')}<p class="growth-note">${escapeHTML(h.growth_note)}</p>${growthHTML(growth)}`;
  if(state.filter==='news')html=`${publicHeading('AI / Agent 动态')}<p class="nav-hint">保留正式发布日期。没有日期的页面更新单独标注。</p>${publicNewsHTML(news)}`;
@@ -115,7 +118,7 @@ function renderPublic(){
 async function ensurePrivate(){if(state.bootstrap)return true;try{state.bootstrap=await getJSON('/api/bootstrap');state.token=state.bootstrap.token;state.workspaceId=state.bootstrap.active_workspace;document.dispatchEvent(new CustomEvent('skill-shelf-bootstrap'));return true;}catch{return false;}}
 async function navigate(view){
  state.filter=view;state.limit=10;document.querySelectorAll('.nav[data-filter]').forEach(button=>{const active=button.dataset.filter===view;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
- if(['home','hot','growth','news'].includes(view)){renderPublic();document.dispatchEvent(new CustomEvent('skill-shelf-view'));return;}
+ if(['home','hot','growth','news','tibo'].includes(view)){renderPublic();document.dispatchEvent(new CustomEvent('skill-shelf-view'));return;}
  if(!await ensurePrivate()){$('#session-needed').hidden=false;$('#welcome-panel').hidden=true;$('#workspace-panel').hidden=true;$('#rank-controls').hidden=true;$('#content').innerHTML='<div class="empty">个人记录需要本机会话。可以随时返回首页继续浏览资讯。</div>';return;}
  if(view==='saved'){state.saved=state.workspaceId?await getJSON('/api/saved'):[];render();}
  else{await loadWorkspace(state.workspaceId);if(!state.workspaceId){$('#welcome-panel').hidden=false;$('#content').innerHTML='<div class="empty">检查现有能力后，可在这里看个人增量。也可以先看公开热门榜。</div>';}}
@@ -130,3 +133,5 @@ async function init(){
  if(launch){try{const response=await fetch('/api/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({launch_token:launch})});if(response.ok)history.replaceState(null,'',location.pathname+location.search);}catch{}}
 }
 init();
+
+setInterval(async()=>{try{const value=await getJSON('/api/public/tibo');if(state.hub)state.hub.tibo=value;if(['home','tibo'].includes(state.filter))renderPublic();}catch{}},60000);
