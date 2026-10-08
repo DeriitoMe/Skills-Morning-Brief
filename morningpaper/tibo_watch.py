@@ -55,14 +55,15 @@ class DocumentText(HTMLParser):
 
 def fetch_text(url, *, secret=None, allowed_domains=None, timeout=12):
     headers = {"User-Agent": "Skills-Morning-Brief/1.1", "Accept": "application/json,text/html,application/rss+xml"}
+    read_limit = 8_000_000 if urllib.parse.urlparse(url).hostname in {"learn.chatgpt.com", "developers.openai.com"} else 1_500_000
     if secret: headers["Authorization"] = "Bearer " + secret
     try:
         with urlopen(urllib.request.Request(url, headers=headers), timeout=timeout) as response:
             final = urllib.parse.urlparse(response.geturl())
             if allowed_domains and (final.scheme != "https" or final.hostname not in allowed_domains):
                 raise SourceError("来源重定向至未认可的发布域名")
-            raw = response.read(1_500_001)
-        if len(raw) > 1_500_000: raise SourceError("来源超过读取上限")
+            raw = response.read(read_limit + 1)
+        if len(raw) > read_limit: raise SourceError("来源超过读取上限")
         return raw.decode("utf-8")
     except urllib.error.HTTPError as exc:
         raise SourceError("来源访问受限或不可用（HTTP " + str(exc.code) + "）") from None
